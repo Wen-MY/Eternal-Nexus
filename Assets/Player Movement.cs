@@ -172,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = crouchSpeed;
         }
 
-        else if (onGround && Input.GetButton("Sprint") )
+        else if (onGround && Input.GetButton("Sprint") && Input.GetAxisRaw("Vertical")>0)
         {
             currentState = MovementState.sprinting;
             moveSpeed = sprintSpeed;
