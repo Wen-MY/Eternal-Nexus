@@ -83,14 +83,21 @@ public class GunSystem : MonoBehaviour
             Debug.Log(rayHit.collider.name);
             Vector3 crosshairScreenPos = cam.WorldToViewportPoint(rayHit.point);
             crosshairScreenPos.z = 0f; // Set Z position to zero so that it's on the canvas plane
-            /**
             if (rayHit.collider.CompareTag("Enemy"))
             {
-                //rayHit.collider.GetComponent<BotAI>().TakeDamage(damage); //this line use to make damage to the enemy who being shotting and aiming by player
+                
+                rayHit.collider.GetComponent<Bot>().TakeDamage(damage); //this line use to make damage to the enemy who being shotting and aiming by player
 
             }
-            **/
+            else
+            {
+                Debug.Log("Raycast hit nothing.");
+            }
         }
+         else
+    {
+        Debug.Log("Raycast hit nothing.");
+    }
         //shakeCameraHere
 
         //Graphics 
