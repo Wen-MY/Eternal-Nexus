@@ -19,7 +19,7 @@ public class GunSystem : MonoBehaviour
     public RaycastHit rayHit;
     public LayerMask enemies;
     public Rigidbody rb;
-
+    public GameObject Crosshair;
     //Graphics
     //camshake (from camera shake class)
     //gun shooting fx
@@ -73,13 +73,16 @@ public class GunSystem : MonoBehaviour
         ready = false; //already start shooting 
 
         //apply recoil and gun spreads
-        Vector3 shootingDirection = applySpread(cam.transform.forward);
-        shootingDirection = applyRecoil(shootingDirection);
+        Vector3 shootingDirection = cam.transform.forward;
+        shootingDirection += applySpread(cam.transform.forward);
+        //shootingDirection += applyRecoil(shootingDirection);
 
         //Raycast
-        if(Physics.Raycast(cam.transform.position, cam.transform.forward,out rayHit, range, enemies))
+        if(Physics.Raycast(cam.transform.position, shootingDirection,out rayHit, range, enemies))
         {
             Debug.Log(rayHit.collider.name);
+            Vector3 crosshairScreenPos = cam.WorldToViewportPoint(rayHit.point);
+            crosshairScreenPos.z = 0f; // Set Z position to zero so that it's on the canvas plane
             /**
             if (rayHit.collider.CompareTag("Enemy"))
             {
@@ -120,6 +123,7 @@ public class GunSystem : MonoBehaviour
     }
 
     //gun mechanism
+    //recoil still have problem
     private Vector3 applyRecoil(Vector3 shootingDirection)
     {
         shootingDirection += recoil * cam.transform.up;
