@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class GunSystem : MonoBehaviour
 {   //Gun Config
     [Header ("Gun Configuration")]
@@ -29,17 +28,20 @@ public class GunSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     }
     private void Awake() //Initialize the guns
     {
         bulletsInMagazine = magazineSize;
         ready = true;
     }
+
     // Update is called once per frame
     void Update()
     {
         takeInput();
     }
+   
     private void FixedUpdate()
     {
         debug();
@@ -47,23 +49,23 @@ public class GunSystem : MonoBehaviour
 
     private void takeInput()
     {
-        //check is fullAuto enabled
-        if (fullAutoWeapon)
-            shooting = Input.GetButton("Fire1");
-        else
-            shooting = Input.GetButtonDown("Fire1");
+            //check is fullAuto enabled
+            if (fullAutoWeapon)
+                shooting = Input.GetButton("Fire1");
+            else
+                shooting = Input.GetButtonDown("Fire1");
 
-        //check reload ability
-        if (Input.GetButtonDown("Reload") && bulletsInMagazine < magazineSize && !reloading)
-        {
-            Reload();
-        }
+            //check reload ability
+            if (Input.GetButtonDown("Reload") && bulletsInMagazine < magazineSize && !reloading)
+            {
+                Reload();
+            }
 
-        //check shooting ability
-        if(ready && shooting && !reloading && bulletsInMagazine > 0)
-        {
-            Fire();
-        }
+            //check shooting ability
+            if (ready && shooting && !reloading && bulletsInMagazine > 0)
+            {
+                Fire();
+            }
 
     }
 

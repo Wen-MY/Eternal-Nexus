@@ -6,6 +6,7 @@ public class Bot : MonoBehaviour
 {
     public int maxHealth = 100;
     private int currentHealth;
+    public int damageOnTouch = 20;
     // Start is called before the first frame update
     void Start()
     {

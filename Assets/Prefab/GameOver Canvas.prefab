@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 7342273888924548231}
   - component: {fileID: 2261404107641313712}
   - component: {fileID: 6809548179409024042}
-  - component: {fileID: 1042356547897811335}
+  - component: {fileID: 1348716521083922601}
   m_Layer: 5
   m_Name: GameOver Menu
   m_TagString: Untagged
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1042356547897811335
+--- !u!114 &1348716521083922601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,10 +156,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 768604291754644471}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16d48b7a02e54a34abed005a0d8fd125, type: 3}
+  m_Script: {fileID: 11500000, guid: 380079e73432f4540b3064c841a705b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 768604291754644471}
+  GameOverPanel: {fileID: 6564976439214808239}
 --- !u!1 &1542594009044214956
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,8 +282,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1042356547897811335}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1348716521083922601}
+        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 6370146365394446880}
   - component: {fileID: 5673935180431309978}
   m_Layer: 5
-  m_Name: Red Panel
+  m_Name: Dark Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -874,7 +874,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart
+  m_text: Play Again
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aae58d31501e92642adf8f8601ec7c40, type: 2}
   m_sharedMaterial: {fileID: 3865843562155475983, guid: aae58d31501e92642adf8f8601ec7c40, type: 2}
@@ -956,7 +956,7 @@ GameObject:
   - component: {fileID: 5124878925051827031}
   - component: {fileID: 1491647649060826066}
   m_Layer: 5
-  m_Name: Restart Button
+  m_Name: PlayAgain Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1065,9 +1065,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1042356547897811335}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 1348716521083922601}
+        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+        m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
