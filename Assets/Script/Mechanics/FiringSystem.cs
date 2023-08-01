@@ -1,4 +1,7 @@
+using System.Xml;
 using UnityEngine;
+using UnityEngine.UI;
+
 public class FiringSystem : MonoBehaviour
 {   //Gun Config
     [Header ("Gun Configuration")]
@@ -23,12 +26,11 @@ public class FiringSystem : MonoBehaviour
     //camshake (from camera shake class)
     //gun shooting fx
     public GameObject muzzleFire, impactMark;
-
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-
     }
     private void Awake() //Initialize the guns
     {
@@ -39,6 +41,8 @@ public class FiringSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("isShooting", shooting);
+        animator.SetBool("isReloading", reloading);
         takeInput();
     }
    
@@ -59,6 +63,7 @@ public class FiringSystem : MonoBehaviour
             if (Input.GetButtonDown("Reload") && bulletsInMagazine < magazineSize && !reloading)
             {
                 Reload();
+            
             }
 
             //check shooting ability
@@ -121,8 +126,8 @@ public class FiringSystem : MonoBehaviour
     }
     private void Reload()
     {
+        Debug.Log("Reloading...");
         reloading = true;
-        //add animation here
         Invoke("resetReload", timeReload);
     }
     private void resetReload()

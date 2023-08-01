@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private RaycastHit slopeHit;
     private bool exitingSlope;
 
+    public Animator animator;
 
     public enum MovementState
     { 
@@ -76,6 +77,11 @@ public class PlayerMovement : MonoBehaviour
         speedLimiting();
         speedController();
         debug();
+
+
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+        animator.SetFloat("speed", Mathf.Abs(x) + Mathf.Abs(z));
     }
 
     private void getInput()

@@ -11,7 +11,6 @@ public class HealthStaminaSystem : MonoBehaviour
         public float currentHealth;
         public float currentStamina;
         private float dValue = 5;
-        public FiringSystem gun;
         public Bot bot;
         public GameOverScreen gameOverScreen;
        
