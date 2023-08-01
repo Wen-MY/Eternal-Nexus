@@ -1,5 +1,5 @@
 using UnityEngine;
-public class GunSystem : MonoBehaviour
+public class FiringSystem : MonoBehaviour
 {   //Gun Config
     [Header ("Gun Configuration")]
     public int damage;

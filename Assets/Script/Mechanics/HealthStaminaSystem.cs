@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class PlayerSystem : MonoBehaviour
+public class HealthStaminaSystem : MonoBehaviour
     {
         public UnityEngine.UI.Image healthBar;
         public UnityEngine.UI.Slider staminaBar;
@@ -11,7 +11,7 @@ public class PlayerSystem : MonoBehaviour
         public float currentHealth;
         public float currentStamina;
         private float dValue = 5;
-        public GunSystem gun;
+        public FiringSystem gun;
         public Bot bot;
         public GameOverScreen gameOverScreen;
        
