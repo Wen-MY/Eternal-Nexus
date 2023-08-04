@@ -1,0 +1,104 @@
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+
+public class HealthStaminaSystem : MonoBehaviour
+    {
+        public UnityEngine.UI.Image healthBar;
+        public UnityEngine.UI.Slider staminaBar;
+        public float maxHealth = 100f;
+        public float maxStamina = 100f;
+        public float currentHealth;
+        public float currentStamina;
+        private float dValue = 5;
+        public Bot bot;
+        public GameOverScreen gameOverScreen;
+       
+        void Start()
+        {
+            currentHealth = maxHealth;
+            currentStamina = maxStamina;
+            staminaBar.maxValue = currentStamina;
+        }
+
+        void Update()
+        {
+            //health
+            healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 1);
+            if (currentHealth <= 0)
+            {
+                gameObject.SetActive(false);
+                gameOverScreen.GameOver();
+                Debug.Log("Dead");
+            }
+
+            //regenerate stamina
+            if (Input.GetKeyDown(KeyCode.E)) {
+                RecoverHealth(20f);
+            }
+            
+            //use stamina
+            if (Input.GetButton("Sprint"))
+            {
+                DecreaseEnergy();
+            }
+            else if (currentStamina != maxStamina)
+            {
+                IncreaseEnergy();
+            }
+            staminaBar.value = currentStamina;
+
+    }
+
+        private void OnCollisionEnter(Collision collision) 
+        {
+            if (collision.gameObject.CompareTag("Enemy")) //if the player touch the enemies
+            {
+                Bot enemyBot = collision.gameObject.GetComponent<Bot>();
+                if (enemyBot != null)
+                {
+                    TakeDamage(enemyBot.damageOnTouch); 
+                }
+            }
+        }
+
+
+    private void DecreaseEnergy()
+    {
+        if (currentStamina != 0)
+        {
+            currentStamina -= dValue * Time.deltaTime;
+        }
+        if (currentStamina <= -1)
+        {
+            currentStamina = 0;
+        }
+    }
+
+    private void IncreaseEnergy()
+    {
+        currentStamina += dValue * Time.deltaTime;
+        if (currentStamina >= maxStamina)
+        {
+            currentStamina = maxStamina;
+        }
+    }
+
+    void TakeDamage(float damage) {
+            currentHealth -= damage;
+            //healthBar.SetHealth(currentHealth);
+            if (currentHealth < 0f) {
+                currentHealth = 0f;
+            }
+            Debug.Log("Player health: "+ currentHealth);
+        }
+
+        void RecoverHealth(float healing) {
+            currentHealth += healing;
+            //healthBar.SetHealth(currentHealth);
+            if (currentHealth>100f) {
+                currentHealth = 100f;
+            }
+            Debug.Log("Player health: "+ currentHealth);
+        }
+    }
