@@ -13,7 +13,9 @@ public class FiringSystem : MonoBehaviour
     float spread;
 
     //combat state
-    bool shooting, ready, reloading;
+    public bool shooting;
+    public bool ready;
+    public bool reloading;
 
     //reference Setting
     public Camera cam;
@@ -28,21 +30,24 @@ public class FiringSystem : MonoBehaviour
     public GameObject muzzleFire, impactMark;
     public Animator animator;
 
+
     // Start is called before the first frame update
     void Start()
     {
+      
     }
     private void Awake() //Initialize the guns
     {
         bulletsInMagazine = magazineSize;
         ready = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("isShooting", shooting);
         animator.SetBool("isReloading", reloading);
+        animator.SetBool("IsShooting", shooting);
         takeInput();
     }
    
@@ -67,7 +72,7 @@ public class FiringSystem : MonoBehaviour
             }
 
             //check shooting ability
-            if (ready && shooting && !reloading && bulletsInMagazine > 0)
+            if ( ready && shooting && !reloading && bulletsInMagazine > 0)
             {
                 Fire();
             }
