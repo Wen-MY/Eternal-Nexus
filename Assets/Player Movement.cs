@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float sprintSpeed = 75f;
     public float groundDrag = 5f;
 
+    public float dashSpeed = 100f;
+
     [Header("Jump")]
     public float jumpMagnitude = 8f;//default 8 jump force
     public float jumpCooldown = 0.75f;
@@ -37,8 +39,12 @@ public class PlayerMovement : MonoBehaviour
         crouching,
         walking,
         sprinting,
+        dashing,
         inAir
     }
+
+    public bool dashing;
+
     [Header("Others")]
     public Transform orientation;
 
@@ -50,6 +56,10 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontalInput;
     private float verticalInput;
+    private float desiredMoveSpeed;
+    private float lastDesiredMoveSpeed;
+    private MovementState lastState;
+    private bool keepMomentum;
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +86,11 @@ public class PlayerMovement : MonoBehaviour
         speedLimiting();
         speedController();
         debug();
+
+        if (currentState == MovementState.walking || currentState == MovementState.sprinting || currentState == MovementState.crouching)
+            rb.drag = groundDrag;
+        else
+            rb.drag = 0;
     }
 
     private void getInput()
@@ -186,9 +201,20 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             currentState = MovementState.inAir;
-        }
-    }
 
+            if (desiredMoveSpeed < sprintSpeed)
+                desiredMoveSpeed = walkSpeed;
+            else
+                desiredMoveSpeed = sprintSpeed;
+        }
+        bool desiredMoveSpeedHasChanged = desiredMoveSpeed != lastDesiredMoveSpeed;
+        if (lastState == MovementState.dashing) keepMomentum = true;
+
+
+        lastDesiredMoveSpeed = desiredMoveSpeed;
+        lastState = currentState;
+    }
+    
     private bool onSlope()
     {
         if(Physics.Raycast(transform.position,Vector3.down,out slopeHit,playerHeight * 0.5f + 0.3f))
@@ -201,6 +227,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 getSlopeMoveDirection()
     {
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
+    }
+    private void dashInput()
+    {
+        if (dashing)
+        {
+            currentState = MovementState.dashing;
+            desiredMoveSpeed = dashSpeed;
+        }
     }
     private void debug()
     {

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8707064378015130064}
-  - component: {fileID: 1433320965630315301}
+  - component: {fileID: 8361592109188027333}
   m_Layer: 0
   m_Name: ObjectPoolManager
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1433320965630315301
+--- !u!114 &8361592109188027333
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6e01ba67ba9944eb1853140d3d4bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToPool: {fileID: 0}
-  poolSize: 10
+  pools:
+  - prefab: {fileID: 0}
+    poolSize: 10
+  - prefab: {fileID: 0}
+    poolSize: 10

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5866315605851370401}
-  - component: {fileID: 4163928621686793804}
+  - component: {fileID: 4171176426355923319}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4163928621686793804
+--- !u!114 &4171176426355923319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,3 +47,8 @@ MonoBehaviour:
   player: {fileID: 0}
   spawnDistance: 30
   despawnDistance: 50
+  objectsToSpawn:
+  - prefab: {fileID: 0}
+    spawnPercentage: 60
+  - prefab: {fileID: 0}
+    spawnPercentage: 40

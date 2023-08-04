@@ -1,34 +1,51 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
-    public GameObject prefabToPool;
-    public int poolSize = 10;
+    [System.Serializable]
+    public class Pool
+    {
+        public GameObject prefab;
+        public int poolSize = 10;
+    }
 
-    private List<GameObject> pooledObjects = new List<GameObject>();
+    public List<Pool> pools;
+    private Dictionary<GameObject, Queue<GameObject>> poolDictionary = new Dictionary<GameObject, Queue<GameObject>>();
 
     private void Start()
     {
-        for (int i = 0; i < poolSize; i++)
+        foreach (Pool pool in pools)
         {
-            GameObject obj = Instantiate(prefabToPool);
-            obj.SetActive(false);
-            pooledObjects.Add(obj);
+            Queue<GameObject> objectPool = new Queue<GameObject>();
+
+            for (int i = 0; i < pool.poolSize; i++)
+            {
+                GameObject obj = Instantiate(pool.prefab, transform);
+                obj.SetActive(false);
+                objectPool.Enqueue(obj);
+            }
+
+            poolDictionary.Add(pool.prefab, objectPool);
         }
     }
 
-    public GameObject GetPooledObject()
+    public GameObject GetPooledObject(GameObject prefab)
     {
-        for (int i = 0; i < pooledObjects.Count; i++)
+        if (poolDictionary.ContainsKey(prefab) && poolDictionary[prefab].Count > 0)
         {
-            if (!pooledObjects[i].activeInHierarchy)
-            {
-                return pooledObjects[i];
-            }
+            GameObject obj = poolDictionary[prefab].Dequeue();
+            obj.SetActive(true);
+            return obj;
         }
 
+        Debug.LogWarning("Object pool is empty for prefab: " + prefab.name);
         return null;
+    }
+
+    public void ReturnToPool(GameObject prefab, GameObject obj)
+    {
+        obj.SetActive(false);
+        poolDictionary[prefab].Enqueue(obj);
     }
 }
