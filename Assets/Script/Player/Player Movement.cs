@@ -42,11 +42,12 @@ public class PlayerMovement : MonoBehaviour
     }
     [Header("Others")]
     public Transform orientation;
-
-    Vector3 moveDirection;
-
+    public Vector3 moveDirection;
+    public Transform playerObject;
     Rigidbody rb;
+    Camera cam;
 
+    private Vector3 initialCamPos;
     public MovementState currentState;
 
     private float horizontalInput;
@@ -55,8 +56,11 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        cam = GetComponentInChildren<Camera>();
+
         rb.freezeRotation = true;   //If freezeRotation is enabled, the rotation is not modified by the physics simulation. This is useful for creating first person shooters, because the player needs full control of the rotation using the mouse
-        initialHeight = transform.localScale.y;
+        initialCamPos = cam.transform.localPosition;
+        initialHeight = playerObject.transform.localScale.y;  
     }
     void FixedUpdate() //for physics calculations , use fixed update for smoother movement
     {
@@ -161,12 +165,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Crouch")) //let the force only apply once
         {
-            transform.localScale = new Vector3(transform.localScale.x, crouchHeight, transform.localScale.z);
+            //transform.localScale = new Vector3(transform.localScale.x, crouchHeight, transform.localScale.z); //bug , will transform all child objects
+            cam.transform.localPosition = new Vector3(initialCamPos.x, initialCamPos.y * 0.5f, initialCamPos.z);
+            playerObject.transform.localScale = new Vector3(transform.localScale.x, crouchHeight, transform.localScale.z);
+
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
         }
         if(Input.GetButtonUp("Crouch")) //when unpress , return to normal
         {
-            transform.localScale = new Vector3(transform.localScale.x, initialHeight, transform.localScale.z);
+            //transform.localScale = new Vector3(transform.localScale.x, initialHeight, transform.localScale.z);
+            cam.transform.localPosition = new Vector3(initialCamPos.x, initialCamPos.y, initialCamPos.z);
+            playerObject.transform.localScale = new Vector3(transform.localScale.x, initialHeight, transform.localScale.z);
         }
     }
        
