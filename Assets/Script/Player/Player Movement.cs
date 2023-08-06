@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
     public float playerHeight = 2f; //default 2
     public LayerMask groundLayer;
     bool onGround;
-
     [Header("Slope Check")]
     public float maxSlopeAngle;
     private RaycastHit slopeHit;

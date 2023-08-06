@@ -1991,13 +1991,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 963194227}
     - target: {fileID: 762935511635526791, guid: bdef7d4d333edfd488c1726e68de5dd6, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 762935511635526791, guid: bdef7d4d333edfd488c1726e68de5dd6, type: 3}
       propertyPath: recoil
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 762935511635526791, guid: bdef7d4d333edfd488c1726e68de5dd6, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1596204172}
+    - target: {fileID: 762935511635526791, guid: bdef7d4d333edfd488c1726e68de5dd6, type: 3}
+      propertyPath: movement
+      value: 
+      objectReference: {fileID: 458914454}
     - target: {fileID: 762935511635526791, guid: bdef7d4d333edfd488c1726e68de5dd6, type: 3}
       propertyPath: Crosshair
       value: 
@@ -2008,11 +2016,11 @@ PrefabInstance:
       objectReference: {fileID: 1341869769842038, guid: 8b7a1ffda5bb7474b8fae646c45ce7b4, type: 3}
     - target: {fileID: 762935511635526791, guid: bdef7d4d333edfd488c1726e68de5dd6, type: 3}
       propertyPath: movingSpread
-      value: 0.04
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 762935511635526791, guid: bdef7d4d333edfd488c1726e68de5dd6, type: 3}
       propertyPath: normalSpread
-      value: 0.02
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 762935511635526791, guid: bdef7d4d333edfd488c1726e68de5dd6, type: 3}
       propertyPath: enemies.m_Bits

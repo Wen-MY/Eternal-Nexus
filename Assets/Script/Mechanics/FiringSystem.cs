@@ -30,7 +30,8 @@ public class FiringSystem : MonoBehaviour
     public GameObject muzzleFire, impactMark;
     public Animator animator;
 
-
+    private Vector3 accumulatedRecoil = Vector3.zero;
+    public PlayerMovement movement;
     // Start is called before the first frame update
     void Start()
     {
@@ -87,7 +88,7 @@ public class FiringSystem : MonoBehaviour
         //apply recoil and gun spreads
         Vector3 shootingDirection = cam.transform.forward;
         shootingDirection += applySpread(cam.transform.forward);
-        //shootingDirection += applyRecoil(shootingDirection);
+        shootingDirection += applyRecoil(shootingDirection);
 
         //Raycast
         if(Physics.Raycast(cam.transform.position, shootingDirection,out rayHit, range, enemies))
@@ -128,10 +129,15 @@ public class FiringSystem : MonoBehaviour
     private void resetFire()
     {
         ready = true;
+        if (!shooting)
+        {
+            accumulatedRecoil = Vector3.zero;
+        }
     }
     private void Reload()
     {
         Debug.Log("Reloading...");
+        accumulatedRecoil = Vector3.zero;
         reloading = true;
         Invoke("resetReload", timeReload);
     }
@@ -145,22 +151,36 @@ public class FiringSystem : MonoBehaviour
     //recoil still have problem
     private Vector3 applyRecoil(Vector3 shootingDirection)
     {
-        shootingDirection += recoil * cam.transform.up;
+
+        //accumulatedRecoil += recoil * cam.transform.up;
+        if (movement.currentState == PlayerMovement.MovementState.crouching)
+            accumulatedRecoil += recoil * cam.transform.up * 0.5f;
+        else
+            accumulatedRecoil += recoil * cam.transform.up;
+        shootingDirection += accumulatedRecoil;
         return shootingDirection;
     }
     private Vector3 applySpread(Vector3 shootingDirection)
     {
         // if player is moving then spread become more higher else is normal when standing
-        if (rb.velocity.magnitude > 0)
-            spread = movingSpread; //
-        else
-            spread = normalSpread;
+        switch (movement.currentState)
+        {
 
+            case PlayerMovement.MovementState.crouching:
+                spread = normalSpread * 0.5f;
+                break;
+            case PlayerMovement.MovementState.sprinting:
+                spread = movingSpread;
+                break;
+            default:
+                spread = normalSpread;
+                break;
 
-        shootingDirection += Random.Range(-spread, spread) * cam.transform.up;
+        }
         shootingDirection += Random.Range(-spread, spread) * cam.transform.right;
         return shootingDirection;
     }
+
 
 
 
