@@ -26,6 +26,7 @@ public class FiringSystem : MonoBehaviour
     public GameObject Crosshair;
     //Graphics
     //camshake (from camera shake class)
+    public CameraShake camShake;
     //gun shooting fx
     public GameObject muzzleFire, impactMark;
     public Animator animator;
@@ -67,9 +68,9 @@ public class FiringSystem : MonoBehaviour
     private void takeInput()
     {
             //check is fullAuto enabled
-            if (fullAutoWeapon)
+            if (fullAutoWeapon && bulletsInMagazine > 0)
                 shooting = Input.GetButton("Fire1");
-            else
+            else if(bulletsInMagazine > 0)
                 shooting = Input.GetButtonDown("Fire1");
 
             //check reload ability
@@ -119,7 +120,12 @@ public class FiringSystem : MonoBehaviour
         Debug.Log("Raycast hit nothing.");
     }
         //shakeCameraHere
-
+        CameraShake camShake = cam.GetComponent<CameraShake>();
+        if (camShake != null)
+        {
+            // Adjust the shake duration and magnitude as desired
+            camShake.ShakeCamera(0.1f, recoil);
+        }
         //Graphics 
         //impact marks effect
         GameObject impactObj = Instantiate(impactMark, rayHit.point, Quaternion.Euler(0, 0, 0));
