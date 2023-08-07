@@ -35,7 +35,14 @@ public class FiringSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+      cam = GetComponentInParent<Camera>();
+      aimingPoint = GameObject.Find("firePoint").GetComponent<Transform>();
+      Crosshair = GameObject.Find("crosshairMiddle").GetComponent<GameObject>();
+      rb = GetComponentInParent<Rigidbody>();
+      enemies = LayerMask.GetMask("Enemy");
+      movement = GetComponentInParent<PlayerMovement>();
+
+
     }
     private void Awake() //Initialize the guns
     {
@@ -148,7 +155,6 @@ public class FiringSystem : MonoBehaviour
     }
 
     //gun mechanism
-    //recoil still have problem
     private Vector3 applyRecoil(Vector3 shootingDirection)
     {
 
