@@ -43,7 +43,6 @@ public class FiringSystem : MonoBehaviour
       enemies = LayerMask.GetMask("Enemy");
       movement = GetComponentInParent<PlayerMovement>();
 
-
     }
     private void Awake() //Initialize the guns
     {
