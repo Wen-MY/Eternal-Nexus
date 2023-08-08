@@ -92,7 +92,8 @@ public class FiringSystem : MonoBehaviour
     private void Fire()
     {
         ready = false; //already start shooting 
-
+        animator.SetTrigger("Firing");
+        
         //apply recoil and gun spreads
         Vector3 shootingDirection = cam.transform.forward;
         shootingDirection += applySpread(cam.transform.forward);
@@ -142,6 +143,7 @@ public class FiringSystem : MonoBehaviour
     private void resetFire()
     {
         ready = true;
+        animator.ResetTrigger("Firing");
         if (!shooting)
         {
             accumulatedRecoil = Vector3.zero;

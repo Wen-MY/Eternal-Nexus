@@ -178,6 +178,8 @@ public class PlayerMovement : MonoBehaviour
             playerObject.transform.localScale = new Vector3(transform.localScale.x, crouchHeight, transform.localScale.z);
 
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+            Debug.Log("Crouch Button Pressed");
+            Debug.Log("Initial Cam Pos: " + initialCamPos);
         }
         if(Input.GetButtonUp("Crouch")) //when unpress , return to normal
         {
