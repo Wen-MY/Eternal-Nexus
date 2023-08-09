@@ -152,6 +152,7 @@ public class FiringSystem : MonoBehaviour
     private void Reload()
     {
         Debug.Log("Reloading...");
+        animator.SetTrigger("Reloading");
         accumulatedRecoil = Vector3.zero;
         reloading = true;
         Invoke("resetReload", timeReload);
