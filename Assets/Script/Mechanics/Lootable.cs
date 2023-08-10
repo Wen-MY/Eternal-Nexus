@@ -5,6 +5,7 @@ using UnityEngine;
 public class Lootable : MonoBehaviour
 {
     private bool isLooted = false;
+    public List<Item> possibleItems; // List of possible items to loot
 
     private void OnTriggerEnter(Collider other)
     {
