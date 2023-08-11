@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: f7fca6821fcdbdc46940575a8489960f
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buddy.bmp
+    second: {fileID: 2100000, guid: 533521d566798114e9cc53fee3cab7d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: emissive.bmp
+    second: {fileID: 2100000, guid: 2fb7f184015df8746ad6cab1db0ac179, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_01.bmp
+    second: {fileID: 2100000, guid: 9b5090862daea78479acb9eb330b42b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_02.bmp
+    second: {fileID: 2100000, guid: d147473f13432344ca5f6596669b92dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_03.bmp
+    second: {fileID: 2100000, guid: 67718af299907cf4aa3a81ac8557875f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_04.bmp
+    second: {fileID: 2100000, guid: 115df22ab8d82da4c8af4c4d40cef12e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_05.bmp
+    second: {fileID: 2100000, guid: 81d6bb89f9fda684585b079e9585642b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_06.bmp
+    second: {fileID: 2100000, guid: 60959167eb8a4814cae1bc9d6ddf9dff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_07.bmp
+    second: {fileID: 2100000, guid: 9c075d5e22eb7ef4385e3abf56e0ff2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_08.bmp
+    second: {fileID: 2100000, guid: cf847940e4674c342b7ebbab4c054f49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_09.bmp
+    second: {fileID: 2100000, guid: b0e4178cdce53dd4dbc35461dd39c8c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_10.bmp
+    second: {fileID: 2100000, guid: fec6d515f5d9d004eb323fac7459dc3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass.bmp
+    second: {fileID: 2100000, guid: a364075b35388ca4c98be9928ecd9e99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ion.bmp
+    second: {fileID: 2100000, guid: a56452e4757eb9b478450f8cd48760d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: silencer.bmp
+    second: {fileID: 2100000, guid: 6594b4452a0c67b408922708bc201fb4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vfx.bmp
+    second: {fileID: 2100000, guid: 2a6772e785db6d34ab9af4bfe03468fe, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: buddy
+    second: {fileID: 2800000, guid: ca0f391a86f28964a97b2d9627d76cf9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: emissive
+    second: {fileID: 2800000, guid: 481fa3258f2427147905c271c23d9fbb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_01
+    second: {fileID: 2800000, guid: f880d64d0897d714a8a33cb4d1c9cf6e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_02
+    second: {fileID: 2800000, guid: ed7853fa4a46cc54b86582ab7f8b3261, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_03
+    second: {fileID: 2800000, guid: 896c8cc8a48f89643ae7b05e1549b267, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_04
+    second: {fileID: 2800000, guid: 1c49453ab20dec84a8a2a86babecbbb0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_05
+    second: {fileID: 2800000, guid: a99d830a4d7b24f44ac4cec65e850dc7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_06
+    second: {fileID: 2800000, guid: 67f4494729c0f7641b4cad538f31fe5b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_07
+    second: {fileID: 2800000, guid: 2fc2a6d612ad97c4fa70c0ab1ce3ab91, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_08
+    second: {fileID: 2800000, guid: 5df1b5c218f0ff142a5e910b9d1c8c43, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_09
+    second: {fileID: 2800000, guid: 3d92231218dc18e49906b889b644a76a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fp_bountyhunter_10
+    second: {fileID: 2800000, guid: 5dae4c7662ebe8d4bb8c9f15fd38936e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2800000, guid: ec6c016d9839d174d94623a35d31fa4a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ion
+    second: {fileID: 2800000, guid: b4667164101731748a59a186b4cb56e9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: silencer
+    second: {fileID: 2800000, guid: b29f11848fd46a646a7f59cef532bec8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: vfx
+    second: {fileID: 2800000, guid: 406637fe23e903e4e8c4d78cb4cb4cea, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
