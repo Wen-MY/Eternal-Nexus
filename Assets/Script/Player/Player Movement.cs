@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
     private float desiredMoveSpeed;
     private float lastDesiredMoveSpeed;
     private MovementState lastState;
-    private bool keepMomentum;
+    //private bool keepMomentum;
     // Start is called before the first frame update
     void Start()
     {
@@ -217,7 +217,7 @@ public class PlayerMovement : MonoBehaviour
                 desiredMoveSpeed = sprintSpeed;
         }
         bool desiredMoveSpeedHasChanged = desiredMoveSpeed != lastDesiredMoveSpeed;
-        if (lastState == MovementState.dashing) keepMomentum = true;
+        //if (lastState == MovementState.dashing) keepMomentum = true;
 
 
         lastDesiredMoveSpeed = desiredMoveSpeed;

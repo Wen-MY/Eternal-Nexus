@@ -38,9 +38,8 @@ public class FiringSystem : MonoBehaviour
     {
       cam = GetComponentInParent<Camera>();
       aimingPoint = GameObject.Find("firePoint").GetComponent<Transform>();
-      Crosshair = GameObject.Find("crosshairMiddle").GetComponent<GameObject>();
       rb = GetComponentInParent<Rigidbody>();
-      enemies = LayerMask.GetMask("Enemy");
+      enemies = LayerMask.GetMask("Enemy" , "Wall", "Ground");
       movement = GetComponentInParent<PlayerMovement>();
 
 

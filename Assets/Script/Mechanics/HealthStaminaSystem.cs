@@ -31,14 +31,9 @@ public class HealthStaminaSystem : MonoBehaviour
                 gameOverScreen.GameOver();
                 Debug.Log("Dead");
             }
-
-            //regenerate stamina
-            if (Input.GetKeyDown(KeyCode.E)) {
-                RecoverHealth(20f);
-            }
             
             //use stamina
-            if (Input.GetButton("Sprint"))
+            if (Input.GetButton("Sprint") && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
             {
                 DecreaseEnergy();
             }
@@ -75,7 +70,7 @@ public class HealthStaminaSystem : MonoBehaviour
         }
     }
 
-    private void IncreaseEnergy()
+    public void IncreaseEnergy()
     {
         currentStamina += dValue * Time.deltaTime;
         if (currentStamina >= maxStamina)
@@ -93,7 +88,7 @@ public class HealthStaminaSystem : MonoBehaviour
             Debug.Log("Player health: "+ currentHealth);
         }
 
-        void RecoverHealth(float healing) {
+        public void RecoverHealth(float healing) {
             currentHealth += healing;
             //healthBar.SetHealth(currentHealth);
             if (currentHealth>100f) {
