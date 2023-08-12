@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         walking,
         sprinting,
         dashing,
+        idle,
         inAir
     }
 
@@ -89,11 +90,10 @@ public class PlayerMovement : MonoBehaviour
         speedLimiting();
         speedController();
         debug();
+        animationHandler();
 
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        animator.SetFloat("speed", Mathf.Abs(x) + Mathf.Abs(z));
+        
     }
 
     private void getInput()
@@ -202,11 +202,16 @@ public class PlayerMovement : MonoBehaviour
             currentState = MovementState.sprinting;
             moveSpeed = sprintSpeed;
         }
-        else if(onGround)
+        else if(onGround && moveDirection.magnitude>0)
         {
             currentState = MovementState.walking;
             moveSpeed = walkSpeed;
    
+        }
+        else if (onGround)
+        {
+            currentState = MovementState.idle;
+            moveSpeed = walkSpeed;
         }
         else
         {
@@ -245,6 +250,58 @@ public class PlayerMovement : MonoBehaviour
             desiredMoveSpeed = dashSpeed;
         }
     }
+    private void animationHandler()
+    {
+        ResetParametersToDefault();
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+        animator.SetFloat("speed", Mathf.Abs(x) + Mathf.Abs(z));
+
+        animator.SetFloat("Vertical", z);
+        animator.SetFloat("Horizontal", x);
+        switch (currentState)
+        {
+            case MovementState.sprinting:
+                animator.SetBool("Sprint",true);
+                break;
+            case MovementState.walking:
+                animator.SetBool("Walk",true);
+                break;
+            case MovementState.crouching:
+                animator.SetBool("Crouch",true);
+                break;
+            case MovementState.idle:
+                animator.SetTrigger("Idle");
+                break;
+        }
+
+
+
+    }
+    public void ResetParametersToDefault()
+    {
+        if (animator != null)
+        {
+            AnimatorControllerParameter[] parameters = animator.parameters;
+
+            foreach (AnimatorControllerParameter param in parameters)
+            {
+                if (param.type == AnimatorControllerParameterType.Bool)
+                {
+                    animator.SetBool(param.name, false);
+                }
+                else if (param.type == AnimatorControllerParameterType.Float)
+                {
+                    animator.SetFloat(param.name, param.defaultFloat);
+                }
+                else if (param.type == AnimatorControllerParameterType.Int)
+                {
+                    animator.SetInteger(param.name, param.defaultInt);
+                }
+            }
+        }
+    }
+
     private void debug()
     {
        
