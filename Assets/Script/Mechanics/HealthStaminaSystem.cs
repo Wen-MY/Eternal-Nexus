@@ -27,7 +27,7 @@ public class HealthStaminaSystem : MonoBehaviour
             healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 1);
             if (currentHealth <= 0)
             {
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
                 gameOverScreen.GameOver();
                 Debug.Log("Dead");
             }
