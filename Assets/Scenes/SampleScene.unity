@@ -816,7 +816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5673935180431309978, guid: 015f72cc39e659f429389c388a1ba131, type: 3}
       propertyPath: m_Color.a
-      value: 1
+      value: 0.5058824
       objectReference: {fileID: 0}
     - target: {fileID: 5673935180431309978, guid: 015f72cc39e659f429389c388a1ba131, type: 3}
       propertyPath: m_Color.b
@@ -7436,7 +7436,7 @@ GameObject:
   - component: {fileID: 1720531497}
   - component: {fileID: 1720531496}
   m_Layer: 5
-  m_Name: Gameplay Canvas
+  m_Name: Gameplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8869,7 +8869,7 @@ PrefabInstance:
     - target: {fileID: 2847834718276815754, guid: c2a71f5dfa56ce1478fd9ed32e196c61, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1589464432}
     - target: {fileID: 2847834718276815754, guid: c2a71f5dfa56ce1478fd9ed32e196c61, type: 3}
       propertyPath: objectsToSpawn.Array.data[0].prefab
       value: 
