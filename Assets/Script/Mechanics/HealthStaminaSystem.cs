@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using static UnityEngine.GraphicsBuffer;
 
 public class HealthStaminaSystem : MonoBehaviour
     {
@@ -13,6 +14,7 @@ public class HealthStaminaSystem : MonoBehaviour
         private float dValue = 5;
         public Bot bot;
         public GameOverScreen gameOverScreen;
+        public GameObject gunHolder;
        
         void Start()
         {
