@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 2555952611645467506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5765253551494355820}
   m_Father: {fileID: 0}
@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetectionRange: 10
-  spawnRange: 5
+  spawnRange: 20
   maxEnemyCount: 4
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 8953001830705553696, guid: a8345c69a8695e3489ba617fb105e2ea, type: 3}
   player: {fileID: 0}
 --- !u!1 &4215896389157567701
 GameObject:

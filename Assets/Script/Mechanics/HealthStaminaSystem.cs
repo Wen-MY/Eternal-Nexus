@@ -81,7 +81,7 @@ public class HealthStaminaSystem : MonoBehaviour
         }
     }
 
-    void TakeDamage(float damage) {
+    public void TakeDamage(float damage) {
             currentHealth -= damage;
             //healthBar.SetHealth(currentHealth);
             if (currentHealth < 0f) {

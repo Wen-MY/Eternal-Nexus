@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public float playerDetectionRange = 10f;
-    public float spawnRange = 5f;
+    public float spawnRange = 20f;
+
     public int maxEnemyCount = 4;
     public GameObject enemyPrefab;
     public Transform player;
@@ -14,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class EnemySpawner : MonoBehaviour
     }
     private int CountEnemiesInRange()
     {
+
         int count = 0;
         Collider[] colliders = Physics.OverlapSphere(transform.position, spawnRange);
         foreach (Collider collider in colliders)
@@ -46,11 +49,12 @@ public class EnemySpawner : MonoBehaviour
                 count++;
             }
         }
+        Debug.Log(count);
         return count;
     }
     private void SpawnEnemy()
     {
-        Vector3 spawnPosition = transform.position + Random.insideUnitSphere * spawnRange;
+        Vector3 spawnPosition = transform.position + Random.insideUnitSphere;
         spawnPosition.y = 0.5f; // Ensure enemies spawn at ground level or desired height
 
         Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);

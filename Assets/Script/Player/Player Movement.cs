@@ -255,7 +255,7 @@ public class PlayerMovement : MonoBehaviour
         ResetParametersToDefault();
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        animator.SetFloat("speed", Mathf.Abs(x) + Mathf.Abs(z));
+        //animator.SetFloat("speed", Mathf.Abs(x) + Mathf.Abs(z));
 
         animator.SetFloat("Vertical", z);
         animator.SetFloat("Horizontal", x);
