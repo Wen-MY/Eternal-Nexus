@@ -9,7 +9,7 @@ public class CameraShake : MonoBehaviour
 
     public void ShakeCamera(float duration, float magnitude)
     {
-        originalPosition = transform.localPosition;
+        //originalPosition = transform.localPosition;
         shakeDuration = duration;
         shakeMagnitude = magnitude;
         shakeTimer = shakeDuration;
