@@ -15,17 +15,37 @@ public class HealthStaminaSystem : MonoBehaviour
         public Bot bot;
         public GameOverScreen gameOverScreen;
         public GameObject gunHolder;
-       
-        void Start()
+        private Shield shieldController;
+
+        private float shieldHealth;
+    void Start()
         {
             currentHealth = maxHealth;
             currentStamina = maxStamina;
             staminaBar.maxValue = currentStamina;
+
+            shieldController = GetComponent<Shield>();
+            
+            shieldHealth = shieldController.maxShieldHealth;
         }
 
         void Update()
         {
-            //health
+        bool isShieldActive = shieldController != null && shieldController.IsShieldActive();
+
+        if (isShieldActive)
+        {
+            // Shield is active, deduct damage from shield health
+            shieldHealth -= Time.deltaTime * 10f; // Example deduction rate
+            if (shieldHealth <= 0)
+            {
+                shieldHealth = 0;
+                shieldController.BreakShield();
+            }
+        }
+        else
+        {
+            // Shield is not active, deduct health as usual
             healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 1);
             if (currentHealth <= 0)
             {
@@ -33,9 +53,10 @@ public class HealthStaminaSystem : MonoBehaviour
                 gameOverScreen.GameOver();
                 Debug.Log("Dead");
             }
-            
-            //use stamina
-            if (Input.GetButton("Sprint") && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
+        }
+
+        //use stamina
+        if (Input.GetButton("Sprint") && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
             {
                 DecreaseEnergy();
             }
@@ -49,15 +70,22 @@ public class HealthStaminaSystem : MonoBehaviour
 
         private void OnCollisionEnter(Collision collision) 
         {
-            if (collision.gameObject.CompareTag("Enemy")) //if the player touch the enemies
+        if (collision.gameObject.CompareTag("Enemy")) //if the player touch the enemies
+        {
+            Bot enemyBot = collision.gameObject.GetComponent<Bot>();
+            if (enemyBot != null)
             {
-                Bot enemyBot = collision.gameObject.GetComponent<Bot>();
-                if (enemyBot != null)
+                if (shieldController != null && shieldController.IsShieldActive())
                 {
-                    TakeDamage(enemyBot.damageOnTouch); 
+                    shieldController.TakeDamage(enemyBot.damageOnTouch); // Apply damage to shield
+                }
+                else
+                {
+                    TakeDamage(enemyBot.damageOnTouch); // Apply damage to health
                 }
             }
         }
+    }
 
 
     private void DecreaseEnergy()
@@ -90,7 +118,17 @@ public class HealthStaminaSystem : MonoBehaviour
             Debug.Log("Player health: "+ currentHealth);
         }
 
-        public void RecoverHealth(float healing) {
+    public void TakeShieldDamage(float damage)
+    {
+        shieldHealth -= damage;
+        if (shieldHealth <= 0)
+        {
+            shieldHealth = 0;
+            shieldController.BreakShield();
+        }
+    }
+
+    public void RecoverHealth(float healing) {
             currentHealth += healing;
             //healthBar.SetHealth(currentHealth);
             if (currentHealth>100f) {
