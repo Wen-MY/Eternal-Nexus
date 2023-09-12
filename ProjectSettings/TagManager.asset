@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Health
+  - Ground
+  - Teleporter
+  - Obstacle
+  - Bullet
   layers:
   - Default
   - TransparentFX
