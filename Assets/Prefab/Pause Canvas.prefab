@@ -988,7 +988,7 @@ RectTransform:
   - {fileID: 1012281957997915017}
   - {fileID: 2627133308738915427}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1419,8 +1419,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 5902832649057208334}
-  pauseButton: {fileID: 0}
-  darkPanel: {fileID: 0}
+  pauseButton: {fileID: 2737236065941276044}
+  darkPanel: {fileID: 8072830026911790076}
 --- !u!1 &6209878996543972914
 GameObject:
   m_ObjectHideFlags: 0
