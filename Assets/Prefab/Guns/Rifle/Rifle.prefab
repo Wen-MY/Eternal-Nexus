@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 4260011524164275470}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.842, y: -6.546, z: -7.298}
 --- !u!95 &6574637320777858948
 Animator:
@@ -124,6 +124,9 @@ MonoBehaviour:
   impactMark: {fileID: 1329845292236604, guid: 9bba9cf244c53c5439505dfc96fdd11c, type: 3}
   animator: {fileID: 2212882686386490746}
   movement: {fileID: 0}
+  shootingSound: {fileID: 8300000, guid: 3dc7b4438e9f788479f2eba0e75191b1, type: 3}
+  reloadingSound: {fileID: 8300000, guid: db22c6fd526ea3441a9c2e843a58dfa9, type: 3}
+  dryFiringSound: {fileID: 8300000, guid: ea6e49f4211caad4d986577207e5affc, type: 3}
 --- !u!1 &6226931380194366032
 GameObject:
   m_ObjectHideFlags: 0

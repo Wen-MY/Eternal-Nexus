@@ -9,6 +9,7 @@ public class Grenade : MonoBehaviour
     public float explodeRadius = 5f;
     public float explosionDelay = 0.8f;
     public GameObject explosionEffect;
+    public AudioClip explosionSound;
 
     private bool hasExploded = false;
     private void OnCollisionEnter(Collision collision)
@@ -24,6 +25,7 @@ public class Grenade : MonoBehaviour
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, explodeRadius);
         GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
+        SoundManager.Instance.PlaySound(explosionSound);
         foreach (Collider collider in colliders)
         {
             // Check if the collider belongs to an enemy or player (based on tags or components)

@@ -18,6 +18,7 @@ public class FiringSystem : MonoBehaviour
     public bool reloading;
 
     //reference Setting
+    [Header("References Configuration")]
     public Camera cam;
     public Transform aimingPoint;
     public RaycastHit rayHit;
@@ -33,6 +34,11 @@ public class FiringSystem : MonoBehaviour
 
     private Vector3 accumulatedRecoil = Vector3.zero;
     public PlayerMovement movement;
+    [Header("Sound Settings")]
+    public AudioClip shootingSound;
+    public AudioClip reloadingSound;
+    public AudioClip dryFiringSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,9 +73,9 @@ public class FiringSystem : MonoBehaviour
     private void takeInput()
     {
             //check is fullAuto enabled
-            if (fullAutoWeapon && bulletsInMagazine > 0)
+            if (fullAutoWeapon && bulletsInMagazine >= 0)
                 shooting = Input.GetButton("Fire1");
-            else if(bulletsInMagazine > 0)
+            else if(bulletsInMagazine >= 0)
                 shooting = Input.GetButtonDown("Fire1");
 
             //check reload ability
@@ -84,15 +90,24 @@ public class FiringSystem : MonoBehaviour
             {
                 Fire();
             }
+            else if (ready && shooting && !reloading && bulletsInMagazine <= 0)
+            {
+                DryFire();
+            }
 
     }
-
+    private void DryFire()
+    {
+        ready = false; //already start shooting
+        SoundManager.Instance.PlaySound(dryFiringSound);
+        Invoke("resetFire", 1f);
+    }
     // player action
     private void Fire()
     {
         ready = false; //already start shooting 
         animator.SetTrigger("Firing");
-        
+        SoundManager.Instance.PlaySound(shootingSound);
         //apply recoil and gun spreads
         Vector3 shootingDirection = cam.transform.forward;
         shootingDirection += applySpread(cam.transform.forward);
@@ -152,6 +167,7 @@ public class FiringSystem : MonoBehaviour
     {
         Debug.Log("Reloading...");
         animator.SetTrigger("Reloading");
+        SoundManager.Instance.PlaySound(reloadingSound);
         accumulatedRecoil = Vector3.zero;
         reloading = true;
         Invoke("resetReload", timeReload);

@@ -24,6 +24,7 @@ public class ObjectSpawner : MonoBehaviour
     private void Start()
     {
         objectPooler = FindObjectOfType<ObjectPooler>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()

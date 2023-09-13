@@ -55,6 +55,8 @@ public class BossFoeAI : MonoBehaviour
         shortDistanceAttack,
         Idle,
     }
+    [Header("Audio")]
+    public AudioClip grenadeThrowSound;
 
     void Start()
     {
@@ -231,7 +233,6 @@ public class BossFoeAI : MonoBehaviour
         }
         Invoke("ResetAttack", 3f);
 
-
     }
     private void Shooting()
     {
@@ -260,6 +261,7 @@ public class BossFoeAI : MonoBehaviour
             canAttack = false;
             animator.SetTrigger("Throw");
             GameObject grenade = Instantiate(grenadeObject, throwPoint.position, throwPoint.rotation);
+            SoundManager.Instance.PlaySound(grenadeThrowSound);
             Rigidbody grenadeRb = grenade.GetComponentInChildren<Rigidbody>();
 
             grenadeRb.velocity = toPlayer.normalized * toPlayer.magnitude;

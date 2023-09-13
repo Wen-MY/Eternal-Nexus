@@ -119,10 +119,14 @@ MonoBehaviour:
     m_Bits: 1792
   rb: {fileID: 0}
   Crosshair: {fileID: 0}
+  camShake: {fileID: 0}
   muzzleFire: {fileID: 1743301284569550, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
   impactMark: {fileID: 1341869769842038, guid: 8b7a1ffda5bb7474b8fae646c45ce7b4, type: 3}
   animator: {fileID: 7713865773415864383}
   movement: {fileID: 0}
+  shootingSound: {fileID: 8300000, guid: 9db176e1ad4d89647a0bbcbd8b28693b, type: 3}
+  reloadingSound: {fileID: 8300000, guid: 6d45ddb1f8f0c5b419ce685195255188, type: 3}
+  dryFiringSound: {fileID: 8300000, guid: ea6e49f4211caad4d986577207e5affc, type: 3}
 --- !u!1 &6226931380194366032
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6226931380194366032}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.79, y: 10.19, z: 0.07406056}
+  m_LocalPosition: {x: 26, y: 10.19, z: 0.07406056}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
