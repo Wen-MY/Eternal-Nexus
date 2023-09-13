@@ -671,6 +671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss-Fishie
       objectReference: {fileID: 0}
+    - target: {fileID: 8089764610532461393, guid: 37441b61be2ba22439824a2356b8dfb8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20132,7 +20136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4763646864938460863, guid: a0b3cc0fdcb497f439500fb4e5787aee, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 542
       objectReference: {fileID: 0}
     - target: {fileID: 4763646864938460863, guid: a0b3cc0fdcb497f439500fb4e5787aee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
