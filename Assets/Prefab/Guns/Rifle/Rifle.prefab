@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 4260011524164275470}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -0.842, y: -6.546, z: -7.298}
 --- !u!95 &6574637320777858948
 Animator:
@@ -223,9 +223,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -3020001607295021978, guid: e4fa8dd72edc5de41901bcd0beaf44e8, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e4fa8dd72edc5de41901bcd0beaf44e8, type: 3}
       propertyPath: m_Name
       value: tb_anim
+      objectReference: {fileID: 0}
+    - target: {fileID: 3725102176391765030, guid: e4fa8dd72edc5de41901bcd0beaf44e8, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

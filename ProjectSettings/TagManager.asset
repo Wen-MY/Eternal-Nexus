@@ -8,6 +8,7 @@ TagManager:
   - Health
   - Obstacle
   - Bullet
+  - Boss
   layers:
   - Default
   - TransparentFX
