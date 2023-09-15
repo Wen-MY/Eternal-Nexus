@@ -18,6 +18,8 @@ public class HealthStaminaSystem : MonoBehaviour
         private Shield shieldController;
 
         private float shieldHealth;
+    public AudioClip hurtSound;
+    //put more sound here
     void Start()
         {
             currentHealth = maxHealth;
@@ -111,11 +113,13 @@ public class HealthStaminaSystem : MonoBehaviour
 
     public void TakeDamage(float damage) {
             currentHealth -= damage;
-            //healthBar.SetHealth(currentHealth);
-            if (currentHealth < 0f) {
+        SoundManager.Instance.PlaySoundByInterval(hurtSound,0.4f);
+        //healthBar.SetHealth(currentHealth);
+        if (currentHealth < 0f) {
                 currentHealth = 0f;
             }
             Debug.Log("Player health: "+ currentHealth);
+            
         }
 
     public void TakeShieldDamage(float damage)

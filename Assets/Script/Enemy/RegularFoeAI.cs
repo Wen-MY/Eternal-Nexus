@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 public class RegularFoeAI : MonoBehaviour
@@ -5,6 +7,12 @@ public class RegularFoeAI : MonoBehaviour
     public Transform player;
     public FoeAttributes foeAttributes;
     public Animator animator;
+    public GameObject Flamethrower;
+    public Transform FlamethrowerPosition;
+    [Header("Sound Effect")]
+    public AudioClip FlamethrowerSound;
+    public AudioClip WalkingSound;
+    public AudioClip AttackSound;
 
     [SerializeField]private NavMeshAgent navMeshAgent;
     private Vector3 initialPosition;
@@ -12,7 +20,9 @@ public class RegularFoeAI : MonoBehaviour
     private float chasingStartTime;
     private float currentPatrolTime = 0f;
     private float currentPatrolDuration = 4f;
-
+    private bool canAttack = true;
+    private bool attacking = false;
+    public float attackDamage;
     private FoeAttributes.FoeState currentState = FoeAttributes.FoeState.Idle;
     // Start is called before the first frame update
     void Start()
@@ -57,7 +67,8 @@ public class RegularFoeAI : MonoBehaviour
             case FoeAttributes.FoeState.Attacking:
                 animator.SetBool("Chasing", false);
                 animator.SetTrigger("Attacking");
-                Attack();
+                if (canAttack)
+                    Attack();
                 break;
   
         }
@@ -106,7 +117,7 @@ public class RegularFoeAI : MonoBehaviour
     {
         // Update destination to player's position
         navMeshAgent.SetDestination(player.position);
-
+        SoundManager.Instance.PlaySoundByInterval(WalkingSound, 0.4f);
         // Check if player is out of chase range or chasing timeout has passed
         if (Vector3.Distance(transform.position, player.position) > foeAttributes.chaseRange ||
             Time.time - chasingStartTime > foeAttributes.chasingTimeout)
@@ -118,14 +129,34 @@ public class RegularFoeAI : MonoBehaviour
             StartAttacking();
         }
     }
-
+    private void ResetAttack()
+    {
+        canAttack = true;
+    }
+    private IEnumerator generateFlame()
+    {
+        
+        yield return new WaitForSeconds(1.2f);
+        if (currentState != FoeAttributes.FoeState.Chasing)
+        {
+            GameObject attack = Instantiate(Flamethrower, FlamethrowerPosition.position, FlamethrowerPosition.rotation);
+            SoundManager.Instance.PlaySound(FlamethrowerSound);
+            SoundManager.Instance.PlaySound(AttackSound);
+            Destroy(attack, 1f);
+        }
+        attacking = false;
+        
+    }
     private void Attack()
     {
-        // attack behavior
-
+        attacking = true;
+        canAttack = false;
+        StartCoroutine(generateFlame());
+        Invoke("ResetAttack", 2f);
         // Transition back to chasing state after attacking
-        if (Vector3.Distance(transform.position, player.position) > foeAttributes.attackRange)
+        if (Vector3.Distance(transform.position, player.position) > foeAttributes.attackRange || !attacking)
         {
+            animator.ResetTrigger("Attacking");
             StartChasing();
         }
     }

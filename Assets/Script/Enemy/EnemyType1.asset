@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyType1
   m_EditorClassIdentifier: 
   chaseRange: 15
-  attackRange: 2
+  attackRange: 3
   patrolSpeed: 3
   patrolRange: 25
   chaseSpeed: 6

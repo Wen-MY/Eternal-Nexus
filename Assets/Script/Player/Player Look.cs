@@ -5,11 +5,10 @@ using UnityEngine;
 public class PlayerLook : MonoBehaviour
 {
     public float mouseSens = 1000f; //default 400
-
     public Transform orientation;
 
-    float xRotation;
-    float yRotation;
+    public float xRotation;
+    public float yRotation;
     // Start is called before the first frame update
     void Start()
     {

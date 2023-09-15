@@ -251,6 +251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSens: 1000
   orientation: {fileID: 697347297834818443}
+  xRotation: 0
+  yRotation: 0
 --- !u!114 &1517210040048419578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +311,6 @@ GameObject:
   - component: {fileID: 7255588846261435334}
   - component: {fileID: 4647794425382424030}
   - component: {fileID: 5590299277294703917}
-  - component: {fileID: 3551009494585776281}
   - component: {fileID: 6229460123125806180}
   m_Layer: 11
   m_Name: Player
@@ -334,7 +335,7 @@ Transform:
   - {fileID: 697347297834818443}
   - {fileID: 7909324937075119791}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &7408978343963207283
 Rigidbody:
@@ -412,6 +413,7 @@ MonoBehaviour:
   bot: {fileID: 0}
   gameOverScreen: {fileID: 0}
   gunHolder: {fileID: 249605412244979442}
+  hurtSound: {fileID: 8300000, guid: 032a4f39620b7994aa36483d2e211ff1, type: 3}
 --- !u!114 &5590299277294703917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,35 +441,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   maxSlopeAngle: 0
+  walkingSound: {fileID: 8300000, guid: b995bc1775ea83b4b8f861763e9a1424, type: 3}
+  sprintingSound: {fileID: 8300000, guid: 5a5fe2a543e35ef44980fcf5ac79551a, type: 3}
+  dashingSound: {fileID: 8300000, guid: 63b4155ef41540f4685302a83db73e5e, type: 3}
+  jumpingSound: {fileID: 8300000, guid: a465f4e2a2f3a354f927f77994a68a08, type: 3}
+  groundingSound: {fileID: 8300000, guid: f65b8caedf0c89b4c9f6ea1408f5e362, type: 3}
   animator: {fileID: 2750627663246766186}
   dashing: 0
   orientation: {fileID: 697347297834818443}
   moveDirection: {x: 0, y: 0, z: 0}
   playerObject: {fileID: 8268240012934940315}
   currentState: 0
---- !u!114 &3551009494585776281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7846320260995386857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e798d59a1bf23243aad7f3995157d4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orientation: {fileID: 697347297834818443}
-  playerCam: {fileID: 7909324937075119791}
-  dashForce: 30
-  dashUpwardForce: 0
-  dashDuration: 0.5
-  useCameraForward: 1
-  allowAllDirections: 1
-  disableGravity: 0
-  resetVel: 1
-  dashCd: 2
-  dashKey: 113
 --- !u!65 &6229460123125806180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1313,15 +1297,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7603479281522482447, guid: e731a88788309f644a9fa3462927a113, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.054182675
       objectReference: {fileID: 0}
     - target: {fileID: 7603479281522482447, guid: e731a88788309f644a9fa3462927a113, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.20000002
       objectReference: {fileID: 0}
     - target: {fileID: 7603479281522482447, guid: e731a88788309f644a9fa3462927a113, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.43
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7603479281522482447, guid: e731a88788309f644a9fa3462927a113, type: 3}
       propertyPath: m_LocalRotation.w

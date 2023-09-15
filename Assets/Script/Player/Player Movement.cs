@@ -30,7 +30,13 @@ public class PlayerMovement : MonoBehaviour
     public float maxSlopeAngle;
     private RaycastHit slopeHit;
     private bool exitingSlope;
-
+    [Header("Sound Effect")]
+    public AudioClip walkingSound;
+    public AudioClip sprintingSound;
+    public AudioClip dashingSound;
+    public AudioClip jumpingSound;
+    public AudioClip groundingSound;
+    [Header("Animator")]
     public Animator animator;
 
     public enum MovementState
@@ -60,6 +66,8 @@ public class PlayerMovement : MonoBehaviour
     private float desiredMoveSpeed;
     private float lastDesiredMoveSpeed;
     private MovementState lastState;
+
+    private bool soundLimiter = true;
     //private bool keepMomentum;
     // Start is called before the first frame update
     void Start()
@@ -120,11 +128,37 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(Vector3.down * 80f, ForceMode.Force);
             }
         }
-
+        if (currentState != MovementState.idle)
+            movementSound();
         rb.useGravity = !onSlope(); //turn off gravity when player climbing slope, prevent player slide down when climbing
         //seperate speed on ground and not on ground
         if(onGround)
             rb.AddForce(moveDirection.normalized * moveSpeed, ForceMode.Force);
+    }
+    private void movementSound()
+    {
+        float soundInterval;
+        AudioClip currentClip;
+        if (currentState == MovementState.sprinting)
+        {
+            currentClip = sprintingSound;
+            soundInterval = 0.4f;
+        }
+        else
+        {
+            currentClip = walkingSound;
+            soundInterval = 0.8f;
+        }
+        if (!SoundManager.Instance.IsSoundPlaying(currentClip) && soundLimiter)
+        {
+            SoundManager.Instance.PlaySound(currentClip);
+            soundLimiter = false;
+            Invoke("resetSoundLimiter", soundInterval);
+        }
+    }
+    private void resetSoundLimiter()
+    {
+        soundLimiter = true;
     }
     private void speedLimiting()
     {
@@ -153,10 +187,25 @@ public class PlayerMovement : MonoBehaviour
             onJump = true;
             exitingSlope = true;
             rb.velocity = new Vector3(rb.velocity.x * 0.5f, 0f, rb.velocity.z * 0.5f); //reset player jump height
-
+            SoundManager.Instance.PlaySound(jumpingSound);
             rb.AddForce(transform.up * jumpMagnitude, ForceMode.Impulse);
             Invoke(nameof(resetJump), jumpCooldown); //invoke the method reset jump after cooldown, allow jumping continuously
+            StartCoroutine(checkingGrounding());
         }
+    }
+    private IEnumerator checkingGrounding()
+    {
+        // Wait for a short time to ensure the player has left the ground
+        yield return new WaitForSeconds(0.1f);
+
+        // Check if the player is still grounded
+        while (!onGround)
+        {
+            yield return null;
+        }
+
+        // Player has landed, play landing sound here
+        SoundManager.Instance.PlaySound(groundingSound);
     }
     private void applyGravity()
     {
@@ -195,6 +244,7 @@ public class PlayerMovement : MonoBehaviour
         {
             currentState = MovementState.crouching;
             moveSpeed = crouchSpeed;
+
         }
 
         else if (onGround && Input.GetButton("Sprint") && Input.GetAxisRaw("Vertical")>0)

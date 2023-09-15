@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _effectsSource;
+
     private void Awake()
     {
         if(Instance == null)
@@ -24,6 +26,11 @@ public class SoundManager : MonoBehaviour
     {
         _effectsSource.PlayOneShot(clip);
     }
+  
+    public bool IsSoundPlaying(AudioClip clip)
+    {
+        return _effectsSource.clip == clip && _effectsSource.isPlaying;
+    }
     public void ChangeMasterVolume(float value)
     {
         AudioListener.volume = value;
@@ -36,4 +43,14 @@ public class SoundManager : MonoBehaviour
     {
         _musicSource.volume = value;
     }
+    private float lastPlayTime;
+    public void PlaySoundByInterval(AudioClip clip, float interval)
+    {
+        if(Time.time - lastPlayTime >= interval)
+        {
+            _effectsSource.PlayOneShot(clip);
+            lastPlayTime = Time.time;
+        }
+    }
+
 }

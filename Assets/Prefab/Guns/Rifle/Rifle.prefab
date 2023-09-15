@@ -106,7 +106,7 @@ MonoBehaviour:
   normalSpread: 0.08
   movingSpread: 0.16
   range: 150
-  timeReload: 2.5
+  timeReload: 3
   magazineSize: 30
   fullAutoWeapon: 1
   shooting: 0

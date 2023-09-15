@@ -38,7 +38,7 @@ public class FiringSystem : MonoBehaviour
     public AudioClip shootingSound;
     public AudioClip reloadingSound;
     public AudioClip dryFiringSound;
-
+    private Vector3 originalCameraPosition = new Vector3(0.0f, 0.5f, 0.0f);
     // Start is called before the first frame update
     void Start()
     {
@@ -184,10 +184,17 @@ public class FiringSystem : MonoBehaviour
 
         //accumulatedRecoil += recoil * cam.transform.up;
         if (movement.currentState == PlayerMovement.MovementState.crouching)
+        {
             accumulatedRecoil += recoil * cam.transform.up * 0.5f;
+        }
         else
+        {
             accumulatedRecoil += recoil * cam.transform.up;
+        }
         shootingDirection += accumulatedRecoil;
+        PlayerLook playerLook = cam.GetComponent<PlayerLook>();
+        playerLook.xRotation -= (recoil*10);
+
         return shootingDirection;
     }
     private Vector3 applySpread(Vector3 shootingDirection)

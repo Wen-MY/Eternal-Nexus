@@ -124,6 +124,9 @@ MonoBehaviour:
   impactMark: {fileID: 1341869769842038, guid: 8b7a1ffda5bb7474b8fae646c45ce7b4, type: 3}
   animator: {fileID: 0}
   movement: {fileID: 0}
+  shootingSound: {fileID: 8300000, guid: 5207b2a445fcb144281ab5395fe95c1d, type: 3}
+  reloadingSound: {fileID: 8300000, guid: db22c6fd526ea3441a9c2e843a58dfa9, type: 3}
+  dryFiringSound: {fileID: 8300000, guid: ea6e49f4211caad4d986577207e5affc, type: 3}
 --- !u!1 &6226931380194366032
 GameObject:
   m_ObjectHideFlags: 0

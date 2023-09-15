@@ -5797,6 +5797,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 2555952611645467506, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750456737690779718, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3626926797180080703, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5841,9 +5849,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7237831785373661533, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

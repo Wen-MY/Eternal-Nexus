@@ -10,7 +10,7 @@ public class BossStageActivator : MonoBehaviour
     public CameraShake cam;
     public float playerDetectionRange = 10f;
     // Start is called before the first frame update
-
+    public AudioClip bossMusic;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;

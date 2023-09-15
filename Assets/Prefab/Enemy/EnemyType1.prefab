@@ -122,7 +122,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  damageOnTouch: 10
+  damageOnTouch: 0
+--- !u!1 &6250322149311434378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4155825235359576479}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4155825235359576479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6250322149311434378}
+  m_LocalRotation: {x: -0, y: -0.6465449, z: -0, w: 0.76287603}
+  m_LocalPosition: {x: -0.9887477, y: 0.8196999, z: 0.32876644}
+  m_LocalScale: {x: 1.420146, y: 1.3333335, z: 1.2565224}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 951012733519637383}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8953001830705553696
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,10 +199,10 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.8
   m_Speed: 5
-  m_Acceleration: 8
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -194,7 +225,13 @@ MonoBehaviour:
   player: {fileID: 0}
   foeAttributes: {fileID: 11400000, guid: 86e81f38ae3450e42be20c5044e8e0e9, type: 2}
   animator: {fileID: 4016745802678942682}
+  Flamethrower: {fileID: 1634767862067424, guid: 892ddd72b60820a41a6015361b5ea808, type: 3}
+  FlamethrowerPosition: {fileID: 4155825235359576479}
+  FlamethrowerSound: {fileID: 8300000, guid: 0712635f06f89e9439277d9c0f036b8d, type: 3}
+  WalkingSound: {fileID: 8300000, guid: 9ea11a2d13d536e4e8441a0f5895995c, type: 3}
+  AttackSound: {fileID: 8300000, guid: 14f5c264a2d87164880f340a83531d61, type: 3}
   navMeshAgent: {fileID: 0}
+  attackDamage: 2
 --- !u!1001 &772389840127970412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -965,7 +1002,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: ad35e9c4bc13e6e4486c2482969a30c0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4155825235359576479}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ad35e9c4bc13e6e4486c2482969a30c0, type: 3}
       insertIndex: -1

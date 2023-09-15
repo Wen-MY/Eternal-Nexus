@@ -57,6 +57,12 @@ public class BossFoeAI : MonoBehaviour
     }
     [Header("Audio")]
     public AudioClip grenadeThrowSound;
+    public AudioClip WalkingSound;
+    public AudioClip JumpSound;
+    public AudioClip SmackSound;
+    public AudioClip SlamSound;
+    public AudioClip ShootingSound;
+
 
     void Start()
     {
@@ -74,12 +80,6 @@ public class BossFoeAI : MonoBehaviour
     {
         Chase();
         PerformStateAction();
-        //Shooting();
-        //checkSmackable();
-        //faceToPlayer();
-        //checkPlayerInFOV();
-        //checkSlamable();
-        //throwingGrenade();
     }
     void FixedUpdate()
     {
@@ -202,6 +202,7 @@ public class BossFoeAI : MonoBehaviour
     {
         // Calculate force direction to push the player away
         //Vector3 pushDirection = (player.position - transform.position).normalized;
+        SoundManager.Instance.PlaySound(SmackSound);
         Vector3 pushDirection = toPlayer.normalized;
         Rigidbody playerRigidbody = player.GetComponent<Rigidbody>();
         if (playerRigidbody != null)
@@ -218,7 +219,7 @@ public class BossFoeAI : MonoBehaviour
     private void Slam()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, slamAttackRadius);
-
+        SoundManager.Instance.PlaySound(SlamSound);
         foreach (Collider collider in colliders)
         {
             // Check if the collider belongs to an enemy or player (based on tags or components)
@@ -241,6 +242,7 @@ public class BossFoeAI : MonoBehaviour
             canAttack = false;
             animator.SetTrigger("Shoot");
             animator.SetFloat("Shooting Speed", shootingInterval*2);
+            SoundManager.Instance.PlaySound(ShootingSound);
             GameObject bullet = Instantiate(bulletObject, firepoint.position, firepoint.rotation);
             bullet.transform.localScale = Vector3.one * 0.1f;
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
@@ -281,6 +283,7 @@ public class BossFoeAI : MonoBehaviour
     }
     private IEnumerator SimulateJump(Vector3 playerPosition,float high)
     {
+        SoundManager.Instance.PlaySound(JumpSound);
         float jumpDuration = 1.0f;
         float jumpHeight = high;
         Vector3 startPosition = transform.position;
@@ -330,6 +333,7 @@ public class BossFoeAI : MonoBehaviour
             animator.SetBool("Walking", true);
             navMeshAgent.SetDestination(player.position);
             navMeshAgent.speed = movingSpeed;
+            SoundManager.Instance.PlaySoundByInterval(WalkingSound,0.4f); //make it only play if is not playing
         }
         else
         {
