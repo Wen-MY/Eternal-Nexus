@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 877611235484420496}
   m_Layer: 8
   m_Name: Boss-Fishie
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
