@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shield : MonoBehaviour
+public class Shield: MonoBehaviour
 {
     public GameObject shieldPrefab;
     public float maxShieldHealth = 100f; // Maximum shield health

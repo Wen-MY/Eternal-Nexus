@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491304}
   - component: {fileID: 13719338}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SK_Soldier_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 481140}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ShootFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 420522}
   - component: {fileID: 13783508}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SK_Soldier_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414936}
   - component: {fileID: 13720394}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SK_Soldier_Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 420174}
   - component: {fileID: 13792380}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_Rifle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 464274}
   - component: {fileID: 9516764}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_Rifle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 440554}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 427246}
   - component: {fileID: 9530324}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Space_Soldier_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +493,7 @@ Transform:
   - {fileID: 414936}
   - {fileID: 440554}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9530324
 Animator:
@@ -508,7 +508,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 4f177d72549cddd48aad42d447007b7a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -525,7 +525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 472368}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WeaponGrip
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -230,7 +230,7 @@ MonoBehaviour:
   FlamethrowerSound: {fileID: 8300000, guid: 0712635f06f89e9439277d9c0f036b8d, type: 3}
   WalkingSound: {fileID: 8300000, guid: 9ea11a2d13d536e4e8441a0f5895995c, type: 3}
   AttackSound: {fileID: 8300000, guid: 14f5c264a2d87164880f340a83531d61, type: 3}
-  navMeshAgent: {fileID: 0}
+  navMeshAgent: {fileID: 7944582994857867181}
   attackDamage: 2
 --- !u!1001 &772389840127970412
 PrefabInstance:

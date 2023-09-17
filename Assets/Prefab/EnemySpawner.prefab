@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b3203de3d32894196f2c02b17d9630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDetectionRange: 10
-  spawnRange: 20
-  maxEnemyCount: 4
+  playerDetectionRange: 30
+  spawnRange: 30
+  maxEnemyCount: 3
   enemyPrefab: {fileID: 8953001830705553696, guid: a8345c69a8695e3489ba617fb105e2ea, type: 3}
   player: {fileID: 0}
 --- !u!1 &4215896389157567701
