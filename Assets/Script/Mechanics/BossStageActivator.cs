@@ -9,7 +9,6 @@ public class BossStageActivator : MonoBehaviour
     public Transform player;
     public CameraShake cam;
     public float playerDetectionRange = 10f;
-    // Start is called before the first frame update
     public AudioClip bossMusic;
     void Start()
     {
@@ -19,6 +18,7 @@ public class BossStageActivator : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.position) <= playerDetectionRange)
         {
+            SoundManager.Instance.ChangeBGM(bossMusic);
             Boss.SetActive(true);
             cam.ShakeCamera(1, 1);
             LockStageBuilding.SetActive(true);

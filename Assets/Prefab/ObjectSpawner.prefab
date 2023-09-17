@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2847834718276815754
 MonoBehaviour:
@@ -48,5 +48,5 @@ MonoBehaviour:
   spawnDistance: 30
   despawnDistance: 80
   objectsToSpawn:
-  - prefab: {fileID: 0}
+  - prefab: {fileID: 2076006164113782124, guid: 17c3f2370d6f5404abc3af5148e60e81, type: 3}
     spawnPercentage: 100

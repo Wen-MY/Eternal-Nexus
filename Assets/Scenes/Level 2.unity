@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.060320295, g: 0.06851452, b: 0.067483, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1477,7 +1477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4763646864938460863, guid: a0b3cc0fdcb497f439500fb4e5787aee, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 535.6385
       objectReference: {fileID: 0}
     - target: {fileID: 4763646864938460863, guid: a0b3cc0fdcb497f439500fb4e5787aee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4115,15 +4115,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5294,15 +5298,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6808,15 +6816,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6994,15 +7006,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9194,15 +9210,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9906,6 +9926,10 @@ PrefabInstance:
     - target: {fileID: 877611235484420496, guid: 37441b61be2ba22439824a2356b8dfb8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587066874930857300, guid: 37441b61be2ba22439824a2356b8dfb8, type: 3}
+      propertyPath: maxHealth
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8089764610532461393, guid: 37441b61be2ba22439824a2356b8dfb8, type: 3}
       propertyPath: m_Name
@@ -10817,15 +10841,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11520,15 +11548,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11922,7 +11954,7 @@ MonoBehaviour:
   player: {fileID: 0}
   cam: {fileID: 452591957}
   playerDetectionRange: 15
-  bossMusic: {fileID: 0}
+  bossMusic: {fileID: 8300000, guid: bd1db8d79bafb1547af7fee3b0b1e032, type: 3}
 --- !u!4 &822325889
 Transform:
   m_ObjectHideFlags: 0
@@ -16150,15 +16182,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16429,6 +16465,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5068043517517241308, guid: d19eca9e5a672bb47ad0685f95179f53, type: 3}
+      propertyPath: m_Volume
+      value: 0.805
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605013147470061340, guid: d19eca9e5a672bb47ad0685f95179f53, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605013147470061340, guid: d19eca9e5a672bb47ad0685f95179f53, type: 3}
+      propertyPath: m_Volume
+      value: 0.674
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605013147470061340, guid: d19eca9e5a672bb47ad0685f95179f53, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 61439b796372a394d8575db5919c9a46, type: 3}
     - target: {fileID: 5639662136530868864, guid: d19eca9e5a672bb47ad0685f95179f53, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -17097,8 +17149,8 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 100
-  m_SpotAngle: 36
-  m_InnerSpotAngle: 21.80208
+  m_SpotAngle: 109
+  m_InnerSpotAngle: 5
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -17450,15 +17502,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23299,6 +23355,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectPoolManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3075118296089942828, guid: 3b25e06961ad237418027cf2ab2179fb, type: 3}
+      propertyPath: pools.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075118296089942828, guid: 3b25e06961ad237418027cf2ab2179fb, type: 3}
+      propertyPath: pools.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 1489661953}
+    - target: {fileID: 3075118296089942828, guid: 3b25e06961ad237418027cf2ab2179fb, type: 3}
+      propertyPath: pools.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 1489661953}
+    - target: {fileID: 3075118296089942828, guid: 3b25e06961ad237418027cf2ab2179fb, type: 3}
+      propertyPath: pools.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 1489661953}
+    - target: {fileID: 3075118296089942828, guid: 3b25e06961ad237418027cf2ab2179fb, type: 3}
+      propertyPath: pools.Array.data[1].poolSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075118296089942828, guid: 3b25e06961ad237418027cf2ab2179fb, type: 3}
+      propertyPath: pools.Array.data[2].poolSize
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23362,15 +23442,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24530,6 +24614,11 @@ MeshCollider:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: b53359ca012a5ec458a140189aff1978, type: 3}
   m_PrefabInstance: {fileID: 1698194923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1489661953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751894566314903376, guid: c2a71f5dfa56ce1478fd9ed32e196c61, type: 3}
+  m_PrefabInstance: {fileID: 217984220}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1494571523 stripped
 GameObject:
@@ -28966,15 +29055,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29720,15 +29813,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29937,7 +30034,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2515575918195557514, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3855939749892218807, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: mouseSens
@@ -30017,7 +30114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6101444066139932996, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7255588846261435334, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: GameOverPanel
@@ -31995,15 +32092,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42379,15 +42480,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -44540,15 +44645,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45056,15 +45165,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: spawnRange
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
+      propertyPath: spawningDelay
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8635455965461130761, guid: 7f92137980482d24d8c9bd2a635546f7, type: 3}
       propertyPath: playerDetectionRange
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

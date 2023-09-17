@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2475eb4e3c763cb428bf7d911e3f549a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 8
+  damage: 30
   timeShooting: 0.06
   recoil: 0.06
   normalSpread: 0.08

@@ -26,7 +26,17 @@ public class SoundManager : MonoBehaviour
     {
         _effectsSource.PlayOneShot(clip);
     }
-  
+    public void ChangeBGM(AudioClip musicClip)
+    {
+        _musicSource.Stop();
+
+        // Assign the new music clip
+        _musicSource.clip = musicClip;
+
+        _musicSource.loop = true;
+        // Play the new music
+        _musicSource.Play();
+    }
     public bool IsSoundPlaying(AudioClip clip)
     {
         return _effectsSource.clip == clip && _effectsSource.isPlaying;

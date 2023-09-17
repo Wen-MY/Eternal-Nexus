@@ -10,7 +10,8 @@ public class EnemySpawner : MonoBehaviour
     public int maxEnemyCount = 4;
     public GameObject enemyPrefab;
     public Transform player;
-
+    public float spawningDelay;
+    private float lastTimeSpawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +34,12 @@ public class EnemySpawner : MonoBehaviour
             // Spawn a new enemy if conditions are met
             if (currentEnemyCount < maxEnemyCount)
             {
-                SpawnEnemy();
+
+                if ((Time.time - lastTimeSpawn) >= spawningDelay)
+                {
+                   SpawnEnemy();
+                   lastTimeSpawn = Time.time;
+                }
             }
         }
     }
