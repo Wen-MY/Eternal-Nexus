@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 877611235484420496}
   m_Layer: 8
   m_Name: Boss-Fishie
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e11f6e9d63c38a46ae56ee27e1eeb6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slamAttackRadius: 2
+  slamAttackRadius: 4
   slamAttackDamage: 50
   slamAttackRange: 30
   shortDistanceAttackRange: 5
