@@ -49,7 +49,7 @@ public class BossFoeAI : MonoBehaviour
 
     [Header("Animation")]
     public Animator animator;
-    private enum BossStatesa
+    private enum BossState
     {
         longDistanceAttack,
         shortDistanceAttack,

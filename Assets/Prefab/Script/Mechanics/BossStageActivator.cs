@@ -8,6 +8,7 @@ public class BossStageActivator : MonoBehaviour
     public GameObject LockStageBuilding;
     public Transform player;
     public CameraShake cam;
+    public GameObject health;
     public float playerDetectionRange = 10f;
     public AudioClip bossMusic;
     void Start()
@@ -19,6 +20,7 @@ public class BossStageActivator : MonoBehaviour
         if (Vector3.Distance(transform.position, player.position) <= playerDetectionRange)
         {
             SoundManager.Instance.ChangeBGM(bossMusic);
+            health.SetActive(true);
             Boss.SetActive(true);
             cam.ShakeCamera(1, 1);
             LockStageBuilding.SetActive(true);

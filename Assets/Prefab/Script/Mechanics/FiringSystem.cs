@@ -10,7 +10,7 @@ public class FiringSystem : MonoBehaviour
     public float timeShooting,recoil, normalSpread,movingSpread, range, timeReload;
     public int magazineSize;
     public bool fullAutoWeapon;
-    int bulletsInMagazine;
+    public int bulletsInMagazine;
     float spread;
 
     //combat state

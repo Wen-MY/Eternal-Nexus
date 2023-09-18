@@ -55,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
                 count++;
             }
         }
-        Debug.Log(count);
+        //Debug.Log(count);
         return count;
     }
     private void SpawnEnemy()

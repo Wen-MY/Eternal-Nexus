@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f75f8d39531a074da5f77071a0c23d4, type: 3}
   m_Name: EnemyType1
   m_EditorClassIdentifier: 
-  chaseRange: 15
+  chaseRange: 50
   attackRange: 3
   patrolSpeed: 3
   patrolRange: 25
   chaseSpeed: 6
   chasingTimeout: 15
-  activateRange: 50
-  destroyRange: 100
+  activateRange: 100
+  destroyRange: 150

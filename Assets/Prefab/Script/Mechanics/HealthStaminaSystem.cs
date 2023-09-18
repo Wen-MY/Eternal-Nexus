@@ -112,8 +112,9 @@ public class HealthStaminaSystem : MonoBehaviour
     }
 
     public void TakeDamage(float damage) {
-            currentHealth -= damage;
-        SoundManager.Instance.PlaySoundByInterval(hurtSound,0.4f);
+        currentHealth -= damage;
+        SoundManager.Instance.PlaySoundByInterval(hurtSound,0.1f);
+        Debug.Log("Taking Damage :" + damage);
         //healthBar.SetHealth(currentHealth);
         if (currentHealth < 0f) {
                 currentHealth = 0f;
