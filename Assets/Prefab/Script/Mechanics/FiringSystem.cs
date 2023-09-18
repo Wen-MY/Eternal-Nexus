@@ -55,6 +55,7 @@ public class FiringSystem : MonoBehaviour
       movement = GetComponentInParent<PlayerMovement>();
       ammoManager = GameObject.Find("Gameplay").GetComponent<AmmoManager>();
       ammoManager.UpdateAmmo(bulletsInMagazine);
+      reloadText = GameObject.Find("ReloadReminder").GetComponent<TextMeshProUGUI>();
     }
     private void Awake() //Initialize the guns
     {

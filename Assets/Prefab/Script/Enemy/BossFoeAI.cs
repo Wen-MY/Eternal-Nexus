@@ -49,7 +49,7 @@ public class BossFoeAI : MonoBehaviour
 
     [Header("Animation")]
     public Animator animator;
-    private enum BossState
+    private enum BossStatesa
     {
         longDistanceAttack,
         shortDistanceAttack,
@@ -63,7 +63,7 @@ public class BossFoeAI : MonoBehaviour
     public AudioClip SlamSound;
     public AudioClip ShootingSound;
 
-
+    public bool Dead = false;
     void Start()
     {
         obstacleLayer = LayerMask.GetMask("Wall","Player");
@@ -78,8 +78,12 @@ public class BossFoeAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Chase();
-        PerformStateAction();
+        if (!Dead)
+        {
+            Chase();
+            PerformStateAction();
+        }
+        Die();
     }
     void FixedUpdate()
     {
@@ -137,7 +141,7 @@ public class BossFoeAI : MonoBehaviour
     private void updateCurrentDistanceToPlayer()
     {
         toPlayer = player.position - transform.position;
-        Debug.Log(toPlayer.magnitude);
+        //Debug.Log(toPlayer.magnitude);
     }
 
     
@@ -190,6 +194,15 @@ public class BossFoeAI : MonoBehaviour
         }
     }
 
+    private void Die()
+    {
+        if(transform.GetComponentInChildren<Bot>().getHealth() <= 0)
+        {
+            transform.localRotation = Quaternion.Euler(90f,0f, 0f);
+            animator.SetBool("Walking", false);
+            Dead = true;
+        }
+    }
     /*ATTACK type-------------------------------------------------*/
     private void ResetAttack()
     {

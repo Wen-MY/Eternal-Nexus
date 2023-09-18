@@ -467,6 +467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2500
   damageOnTouch: 0
+  willDie: 0
 --- !u!4 &6234943829653178173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 43c88ec74da4d5a498ea2bd7505d1784, type: 3}

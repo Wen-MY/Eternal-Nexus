@@ -7,6 +7,7 @@ public class Bot : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
     public int damageOnTouch;
+    public bool willDie = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,15 +23,20 @@ public class Bot : MonoBehaviour
     {
         currentHealth -= damageAmount;
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && willDie)
         {
             Die();
         }
+
     }
     private void Die()
     {
         // Perform any death-related actions here (e.g., play death animation, drop items, etc.)
         Destroy(transform.parent.gameObject); // Destroy the bot GameObject when it dies
         
+    }
+    public int getHealth()
+    {
+        return this.currentHealth;
     }
 }
