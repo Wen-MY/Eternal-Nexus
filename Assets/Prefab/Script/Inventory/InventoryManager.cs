@@ -17,7 +17,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Start() {
         itemType = ChangeSelectedSlot(0);
-        HSSystem = GameObject.Find("Player").GetComponent<HealthStaminaSystem>();
+        HSSystem = GetComponent<HealthStaminaSystem>();
     }
     private void Update() {
        if (Input.GetKeyDown(KeyCode.Alpha1)) {

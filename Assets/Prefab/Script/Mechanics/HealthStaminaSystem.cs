@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using TMPro;
 using static UnityEngine.GraphicsBuffer;
 
 public class HealthStaminaSystem : MonoBehaviour
     {
         public UnityEngine.UI.Image healthBar;
         public UnityEngine.UI.Slider staminaBar;
+        public TextMeshProUGUI textMeshPro;
         public float maxHealth = 100f;
         public float maxStamina = 100f;
         public float currentHealth;
@@ -16,7 +18,7 @@ public class HealthStaminaSystem : MonoBehaviour
         public GameOverScreen gameOverScreen;
         public GameObject gunHolder;
         private Shield shieldController;
-
+        private PlayerMovement playerMovement;
         private float shieldHealth;
     public AudioClip hurtSound;
     //put more sound here
@@ -25,9 +27,9 @@ public class HealthStaminaSystem : MonoBehaviour
             currentHealth = maxHealth;
             currentStamina = maxStamina;
             staminaBar.maxValue = currentStamina;
-
+            textMeshPro.enabled = false;
             shieldController = GetComponent<Shield>();
-            
+            playerMovement = GetComponent<PlayerMovement>();
             shieldHealth = shieldController.maxShieldHealth;
         }
 
@@ -58,15 +60,26 @@ public class HealthStaminaSystem : MonoBehaviour
         }
 
         //use stamina
-        if (Input.GetButton("Sprint") && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
+            if (playerMovement != null)
             {
-                DecreaseEnergy();
+                if (playerMovement.currentState == PlayerMovement.MovementState.sprinting)
+                {
+                    DecreaseEnergy();
+                }
+                else if (currentStamina != maxStamina)
+                {
+                    IncreaseEnergy();
+                }
+                if (currentStamina == 0) {
+                    textMeshPro.enabled = true;
+                    playerMovement.DisableSprinting(); // Disable sprinting when stamina reaches 0
+                }
+                else if (currentStamina > 0) {
+                    playerMovement.EnableSprinting();
+                    textMeshPro.enabled = false;
+                }
+                staminaBar.value = currentStamina;
             }
-            else if (currentStamina != maxStamina)
-            {
-                IncreaseEnergy();
-            }
-            staminaBar.value = currentStamina;
 
     }
 
@@ -96,9 +109,10 @@ public class HealthStaminaSystem : MonoBehaviour
         {
             currentStamina -= dValue * Time.deltaTime;
         }
-        if (currentStamina <= -1)
+        if (currentStamina <= 0)
         {
             currentStamina = 0;
+            
         }
     }
 

@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: a5779048904b60146a369f9192c9a0e8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level1.unity
     guid: 4f533f2daed2cea4682c35addfa56eed
   - enabled: 1
@@ -20,5 +20,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level4.unity
     guid: 7b533dfe561bc47c8975c955fe4ef3d3
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 66674cc7a1528944c9acf29414bf8c43
+  - enabled: 1
+    path: Assets/Scenes/PuzzleL1Scene.unity
+    guid: 8fe7b16fd1c9aff4dae26bbf673e0f81
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 32c16e2b4ff32f549971d35de1bc7954, type: 2}
