@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
-    public float walkSpeed = 5000f;
+    public float walkSpeed = 50f;
     public float sprintSpeed = 75f;
     public float groundDrag = 5f;
     public float dashSpeed = 100f;
@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Animator")]
     public Animator animator;
 
+    
     public enum MovementState
     { 
         crouching,
@@ -66,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     private float desiredMoveSpeed;
     private float lastDesiredMoveSpeed;
     private MovementState lastState;
-
+    private HealthStaminaSystem stamina;
     private bool soundLimiter = true;
     //private bool keepMomentum;
     // Start is called before the first frame update
@@ -74,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         cam = GetComponentInChildren<Camera>();
-
+        stamina = GetComponent<HealthStaminaSystem>();
         rb.freezeRotation = true;   //If freezeRotation is enabled, the rotation is not modified by the physics simulation. This is useful for creating first person shooters, because the player needs full control of the rotation using the mouse
         initialCamPos = cam.transform.localPosition;
         initialHeight = playerObject.transform.localScale.y;  
@@ -97,26 +98,10 @@ public class PlayerMovement : MonoBehaviour
         getInput();
         speedLimiting();
         speedController();
-        debug();
         animationHandler();
 
     }
-    //Sprinting 
-    public void EnableSprinting() {
-            if (currentState == MovementState.sprinting ) {
-                moveSpeed = sprintSpeed;
-            }
-            else if (currentState == MovementState.walking ) {
-                moveSpeed = walkSpeed;
-            }
-
-    }
-    public void DisableSprinting() {
-            currentState = MovementState.walking;
-            moveSpeed = walkSpeed;
-    }
-    //Sprinting 
-
+   
     private void getInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -260,7 +245,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        else if (onGround && Input.GetButton("Sprint") && Input.GetAxisRaw("Vertical")>0)
+        else if (onGround && Input.GetButton("Sprint") && Input.GetAxisRaw("Vertical")>0 && stamina.currentStamina > 1)
         {
             currentState = MovementState.sprinting;
             moveSpeed = sprintSpeed;
@@ -363,10 +348,5 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-    }
-
-    private void debug()
-    {
-       
     }
 }

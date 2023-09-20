@@ -100,18 +100,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2475eb4e3c763cb428bf7d911e3f549a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 15
   timeShooting: 0.06
   recoil: 0.06
-  normalSpread: 0.08
+  normalSpread: 0.06
   movingSpread: 0.12
   range: 80
   timeReload: 3
-  magazineSize: 35
+  magazineSize: 40
   fullAutoWeapon: 1
+  bulletsInMagazine: 0
   shooting: 0
   ready: 1
   reloading: 0
+  reloadText: {fileID: 0}
   cam: {fileID: 0}
   aimingPoint: {fileID: 5357851274297715657}
   enemies:

@@ -78,7 +78,7 @@ public class InventoryManager : MonoBehaviour
             }
             else if (itemType.type == ItemType.Ammos)
             {
-                //Actions
+                //Actions this no need ady
             }
             else if (itemType.type == ItemType.Gems)
             {

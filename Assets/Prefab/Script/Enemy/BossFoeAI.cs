@@ -6,7 +6,7 @@ public class BossFoeAI : MonoBehaviour
 {
     
     [Header("Short Distance Attack Parameters")]
-    public float slamAttackRadius = 2f;
+    public float slamAttackRadius = 4f;
     public float slamAttackDamage = 50f;
     public float slamAttackRange = 30f;
     public float shortDistanceAttackRange = 5f;

@@ -533,9 +533,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e11f6e9d63c38a46ae56ee27e1eeb6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slamAttackRadius: 4
-  slamAttackDamage: 50
-  slamAttackRange: 30
+  slamAttackRadius: 5
+  slamAttackDamage: 20
+  slamAttackRange: 25
   shortDistanceAttackRange: 5
   smashAttackDamage: 10
   smashForce: 35
@@ -558,3 +558,4 @@ MonoBehaviour:
   SmackSound: {fileID: 8300000, guid: c64003443046be246aa2edb75958f757, type: 3}
   SlamSound: {fileID: 8300000, guid: 3c1cb2fcd7150614eac96ff7b5da5136, type: 3}
   ShootingSound: {fileID: 8300000, guid: 25d8a6b3073dcbf40b0133fdbfeb55ce, type: 3}
+  Dead: 0

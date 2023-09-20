@@ -38,6 +38,7 @@ public class RegularFoeAI : MonoBehaviour
 
         initialPosition = transform.position;
         targetPosition = GenerateRandomPatrolPosition();
+        
     }
 
     // Update is called once per frame

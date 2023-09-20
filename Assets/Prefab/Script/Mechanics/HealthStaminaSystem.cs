@@ -20,14 +20,14 @@ public class HealthStaminaSystem : MonoBehaviour
         private Shield shieldController;
         private PlayerMovement playerMovement;
         private float shieldHealth;
-    public AudioClip hurtSound;
+        public AudioClip hurtSound;
     //put more sound here
     void Start()
         {
             currentHealth = maxHealth;
             currentStamina = maxStamina;
             staminaBar.maxValue = currentStamina;
-            textMeshPro.enabled = false;
+            //textMeshPro.enabled = false;
             shieldController = GetComponent<Shield>();
             playerMovement = GetComponent<PlayerMovement>();
             shieldHealth = shieldController.maxShieldHealth;
@@ -70,14 +70,7 @@ public class HealthStaminaSystem : MonoBehaviour
                 {
                     IncreaseEnergy();
                 }
-                if (currentStamina == 0) {
-                    textMeshPro.enabled = true;
-                    playerMovement.DisableSprinting(); // Disable sprinting when stamina reaches 0
-                }
-                else if (currentStamina > 0) {
-                    playerMovement.EnableSprinting();
-                    textMeshPro.enabled = false;
-                }
+               
                 staminaBar.value = currentStamina;
             }
 
@@ -107,7 +100,7 @@ public class HealthStaminaSystem : MonoBehaviour
     {
         if (currentStamina != 0)
         {
-            currentStamina -= dValue * Time.deltaTime;
+            currentStamina -= dValue * Time.deltaTime * 2;
         }
         if (currentStamina <= 0)
         {
@@ -118,7 +111,7 @@ public class HealthStaminaSystem : MonoBehaviour
 
     public void IncreaseEnergy()
     {
-        currentStamina += dValue * Time.deltaTime;
+        currentStamina += dValue * Time.deltaTime * 0.5f;
         if (currentStamina >= maxStamina)
         {
             currentStamina = maxStamina;
