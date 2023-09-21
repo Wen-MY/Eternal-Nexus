@@ -1409,6 +1409,9 @@ MonoBehaviour:
   pauseMenu: {fileID: 5902832649057208334}
   pauseButton: {fileID: 2737236065941276044}
   darkPanel: {fileID: 8072830026911790076}
+  playerMovement: {fileID: 5590299277294703917, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+  weaponSwitcher: {fileID: 0}
+  inventoryManager: {fileID: 0}
 --- !u!1 &6209878996543972914
 GameObject:
   m_ObjectHideFlags: 0

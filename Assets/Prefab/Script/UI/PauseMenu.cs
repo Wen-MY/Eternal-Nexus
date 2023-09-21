@@ -6,6 +6,10 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject pauseButton;
     public GameObject darkPanel;
+    public CameraController cameraController;
+    public PlayerMovement playerMovement;
+    public WeaponSwitcher weaponSwitcher;
+    public InventoryManager inventoryManager;
 
     void Start()
     {
@@ -18,21 +22,27 @@ public class PauseMenu : MonoBehaviour
 
         if (pauseMenu.activeInHierarchy)
         {
-
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            playerMovement.enabled = false;
+            weaponSwitcher.enabled = false;
+            inventoryManager.enabled = false;
+
         }
         else
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+            playerMovement.enabled = true;
+            weaponSwitcher.enabled = true;
+            inventoryManager.enabled = true;
         }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
             Pause();
         }
-        
+
     }
 
     public void Pause()
@@ -47,13 +57,13 @@ public class PauseMenu : MonoBehaviour
         darkPanel.SetActive(false);
         pauseMenu.SetActive(false);
         pauseButton.SetActive(true);
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
     }
 
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 2f;
+        Time.timeScale = 1f;
     }
 
     public void Exit()
@@ -61,4 +71,3 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 }
-    

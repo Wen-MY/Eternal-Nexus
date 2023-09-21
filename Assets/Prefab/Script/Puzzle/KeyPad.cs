@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Keypad : MonoBehaviour
 {
+
     public TextMeshProUGUI Ans;
-    public GameObject passwordMenu;
-    public GameObject inventoryMenu;
+    public GameObject passwordPanel;
+    public GameObject inventoryCanvas;
     public GameObject crosshair;
     public GameObject playerMechanism;
+    public GameObject pauseMenu;
 
     private string Answer = "543210";
     private string enteredCode = "";
@@ -21,10 +23,18 @@ public class Keypad : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-            ToggleKeyPad();
 
-        if (passwordMenu.activeInHierarchy && !codeEntered)
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            ToggleKeyPad();
+        }
+
+        if (pauseMenu.activeInHierarchy)
+        {
+            CloseKeyPad();
+        }
+
+        if (passwordPanel.activeInHierarchy && !codeEntered)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -46,28 +56,35 @@ public class Keypad : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Backspace))
+        {
             RemoveLastDigit();
+        }
 
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
             Enter();
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
+        {
             CloseKeyPad();
+        }
     }
 
     public void ToggleKeyPad()
     {
-        passwordMenu.SetActive(true);
-        inventoryMenu.SetActive(false);
+        passwordPanel.SetActive(true);
+        inventoryCanvas.SetActive(false);
         crosshair.SetActive(false);
         playerMechanism.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = 0;
+
     }
 
     public void CloseKeyPad()
     {
-        passwordMenu.SetActive(false);
-        inventoryMenu.SetActive(true);
+        passwordPanel.SetActive(false);
+        inventoryCanvas.SetActive(true);
         crosshair.SetActive(true);
         playerMechanism.SetActive(true);
         Time.timeScale = 1;

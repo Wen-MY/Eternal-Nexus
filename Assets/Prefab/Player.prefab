@@ -51,6 +51,8 @@ MonoBehaviour:
   - {fileID: 9130541470814860095}
   - {fileID: 2515575918195557514}
   - {fileID: 6101444066139932996}
+  pauseMenu: {fileID: 0}
+  keypad: {fileID: 0}
 --- !u!1 &1861776332122726342
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +327,6 @@ GameObject:
   - component: {fileID: 5440787735157322406}
   - component: {fileID: 7408978343963207283}
   - component: {fileID: 5491222729482668320}
-  - component: {fileID: 7255588846261435334}
   - component: {fileID: 4647794425382424030}
   - component: {fileID: 5590299277294703917}
   - component: {fileID: 6229460123125806180}
@@ -401,19 +402,10 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   pauseButton: {fileID: 0}
   darkPanel: {fileID: 0}
---- !u!114 &7255588846261435334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7846320260995386857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 380079e73432f4540b3064c841a705b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameOverPanel: {fileID: 0}
+  cameraController: {fileID: 0}
+  playerMovement: {fileID: 5590299277294703917}
+  weaponSwitcher: {fileID: 2368664256121463695}
+  inventoryManager: {fileID: 0}
 --- !u!114 &4647794425382424030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,7 +436,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7846320260995386857}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 558bd4bff4cadc1478ce017cf50cfd10, type: 3}
   m_Name: 

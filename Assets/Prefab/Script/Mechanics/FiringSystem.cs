@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class FiringSystem : MonoBehaviour
-{   //Gun Config
+{
+    public GameObject pauseMenu;
+    //Gun Config
     [Header ("Gun Configuration")]
     public int damage;
     public float timeShooting,recoil, normalSpread,movingSpread, range, timeReload;
@@ -67,10 +69,12 @@ public class FiringSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("isReloading", reloading);
-        animator.SetBool("IsShooting", shooting);
-        takeInput();
-
+        if (!pauseMenu.activeInHierarchy)
+        {
+            animator.SetBool("isReloading", reloading);
+            animator.SetBool("IsShooting", shooting);
+            takeInput();
+        }
         // Check if the ammo count is zero and display a reload reminder
         if (bulletsInMagazine == 0)
         {

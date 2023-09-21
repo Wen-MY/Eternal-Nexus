@@ -8513,7 +8513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 877611235484420496, guid: 37441b61be2ba22439824a2356b8dfb8, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 877611235484420496, guid: 37441b61be2ba22439824a2356b8dfb8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18844,6 +18844,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300350, guid: 1829a3413aea1244186f1536d627c48f, type: 3}
+--- !u!114 &1350878944 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1585253287602335344, guid: c015452930571084ea6a6cdf0ef939eb, type: 3}
+  m_PrefabInstance: {fileID: 2726959625413396895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f022dca675e1fa543a50c5e73687e64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1351698545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19108,6 +19119,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4301644, guid: 1829a3413aea1244186f1536d627c48f, type: 3}
+--- !u!114 &1367227535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2368664256121463695, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+  m_PrefabInstance: {fileID: 1796137911}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5738205d1886f77468aabb012a0bff08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1370575912 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 101068, guid: 1829a3413aea1244186f1536d627c48f, type: 3}
@@ -24260,6 +24282,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1661582449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5590299277294703917, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+  m_PrefabInstance: {fileID: 1796137911}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558bd4bff4cadc1478ce017cf50cfd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1666751267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 101540, guid: 1829a3413aea1244186f1536d627c48f, type: 3}
@@ -26307,9 +26340,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 920003101415308631, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1019806763}
+    - target: {fileID: 920003101415308631, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: reloadText
       value: 
       objectReference: {fileID: 289733547}
+    - target: {fileID: 2368664256121463695, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1019806763}
     - target: {fileID: 4647794425382424030, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: bot
       value: 
@@ -26328,7 +26369,7 @@ PrefabInstance:
       objectReference: {fileID: 331775483}
     - target: {fileID: 5440787735157322406, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5440787735157322406, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26382,6 +26423,22 @@ PrefabInstance:
       propertyPath: pauseButton
       value: 
       objectReference: {fileID: 684478176}
+    - target: {fileID: 5491222729482668320, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1661582449}
+    - target: {fileID: 5491222729482668320, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: weaponSwitcher
+      value: 
+      objectReference: {fileID: 1367227535}
+    - target: {fileID: 5491222729482668320, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 1350878944}
+    - target: {fileID: 5808425389196528354, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1019806763}
     - target: {fileID: 7255588846261435334, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: GameOverPanel
       value: 
@@ -26390,6 +26447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8827389552699158681, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1019806763}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41646,6 +41707,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3333671545919871419, guid: c015452930571084ea6a6cdf0ef939eb, type: 3}
+      propertyPath: weaponSwitcher
+      value: 
+      objectReference: {fileID: 1367227535}
+    - target: {fileID: 3333671545919871419, guid: c015452930571084ea6a6cdf0ef939eb, type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 1350878944}
     - target: {fileID: 3428564796515024674, guid: c015452930571084ea6a6cdf0ef939eb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

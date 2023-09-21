@@ -1486,9 +1486,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 920003101415308631, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1936869309}
+    - target: {fileID: 920003101415308631, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: reloadText
       value: 
       objectReference: {fileID: 508245411}
+    - target: {fileID: 2368664256121463695, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1936869309}
     - target: {fileID: 2515575918195557514, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1523,7 +1531,7 @@ PrefabInstance:
       objectReference: {fileID: 1936399925}
     - target: {fileID: 5440787735157322406, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5440787735157322406, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1577,6 +1585,18 @@ PrefabInstance:
       propertyPath: pauseButton
       value: 
       objectReference: {fileID: 1254217852}
+    - target: {fileID: 5491222729482668320, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1831020031}
+    - target: {fileID: 5491222729482668320, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: weaponSwitcher
+      value: 
+      objectReference: {fileID: 598497688}
+    - target: {fileID: 5491222729482668320, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 565790689}
     - target: {fileID: 5590299277294703917, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1589,6 +1609,10 @@ PrefabInstance:
       propertyPath: Crosshair
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5808425389196528354, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1936869309}
     - target: {fileID: 6101444066139932996, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1601,9 +1625,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Player '
       objectReference: {fileID: 0}
+    - target: {fileID: 8827389552699158681, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1936869309}
     - target: {fileID: 9130541470814860095, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5099,6 +5127,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f022dca675e1fa543a50c5e73687e64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &598497688 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2368664256121463695, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+  m_PrefabInstance: {fileID: 176729680}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5738205d1886f77468aabb012a0bff08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &599774091
@@ -9495,7 +9534,7 @@ Transform:
   - {fileID: 717938860}
   - {fileID: 1241315140}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1070619791 stripped
 Transform:
@@ -11177,7 +11216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4857821653834891206, guid: 015f72cc39e659f429389c388a1ba131, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4857821653834891206, guid: 015f72cc39e659f429389c388a1ba131, type: 3}
       propertyPath: m_AnchorMax.x
@@ -16400,6 +16439,17 @@ MonoBehaviour:
   maxShieldHealth: 100
   shieldDuration: 10
   shieldCooldown: 15
+--- !u!114 &1831020031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5590299277294703917, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+  m_PrefabInstance: {fileID: 176729680}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176729682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558bd4bff4cadc1478ce017cf50cfd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1831210643
 GameObject:
   m_ObjectHideFlags: 0
@@ -17927,6 +17977,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3333671545919871419, guid: c015452930571084ea6a6cdf0ef939eb, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1831020031}
+    - target: {fileID: 3333671545919871419, guid: c015452930571084ea6a6cdf0ef939eb, type: 3}
+      propertyPath: weaponSwitcher
+      value: 
+      objectReference: {fileID: 598497688}
+    - target: {fileID: 3333671545919871419, guid: c015452930571084ea6a6cdf0ef939eb, type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 565790689}
     - target: {fileID: 3360657636947681278, guid: c015452930571084ea6a6cdf0ef939eb, type: 3}
       propertyPath: item
       value: 
@@ -17989,7 +18051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5760923158401868926, guid: c015452930571084ea6a6cdf0ef939eb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 539
       objectReference: {fileID: 0}
     - target: {fileID: 5862104741446902757, guid: c015452930571084ea6a6cdf0ef939eb, type: 3}
       propertyPath: m_AnchorMax.y
