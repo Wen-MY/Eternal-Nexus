@@ -6,7 +6,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject pauseButton;
     public GameObject darkPanel;
-    public CameraController cameraController;
     public PlayerMovement playerMovement;
     public WeaponSwitcher weaponSwitcher;
     public InventoryManager inventoryManager;

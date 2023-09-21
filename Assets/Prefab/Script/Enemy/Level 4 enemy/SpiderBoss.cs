@@ -15,6 +15,7 @@ public class SpiderBoss : MonoBehaviour
     public bool isChasing = false;
     public float chaseStartTime = 5f;
     public Transform bulletSpawnPoint; // The point where bullets will be spawned
+    public GameObject bossHealth;
     public GameObject bulletPrefab; // The bullet prefab
     public float bulletSpeed = 45f; // Speed of the bullets
     public float shootDuration = 5f; // Duration of shooting in seconds
@@ -34,6 +35,7 @@ public class SpiderBoss : MonoBehaviour
 
     private void Start()
     {
+        bossHealth.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         currentState = BossState.Idle;
         bossAnimator = GetComponent<Animator>();
@@ -44,6 +46,7 @@ public class SpiderBoss : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
         Debug.Log("Current State: " + currentState);
 
+        
 
 
         switch (currentState)
@@ -52,6 +55,7 @@ public class SpiderBoss : MonoBehaviour
                 bossAnimator.SetTrigger("Idle"); // Trigger the "Idle" animation
                 if (distanceToPlayer <= attackRange)
                 {
+                    bossHealth.SetActive(true);
                     float randomAction = Random.Range(0f, 1f);
                     if (randomAction <= 0.3f)
                     {
