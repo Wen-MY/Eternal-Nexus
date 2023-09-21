@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class SkillManager: MonoBehaviour
 {
-    private int selectedLevel; // Store the selected level ID
+    public LevelManager levelManager;
+ // Store the selected level ID
 
     private void Start()
     {
@@ -14,7 +15,6 @@ public class SkillManager: MonoBehaviour
         EnableSelectedSkill(selectedSkill);
 
         // Retrieve the selected level from PlayerPrefs
-        selectedLevel = PlayerPrefs.GetInt("SelectedLevel", 1); // Default to Level ID 1 if not found
     }
 
     private void EnableSelectedSkill(int selectedSkill)
@@ -65,8 +65,6 @@ public class SkillManager: MonoBehaviour
 
     public void StartGame()
     {
-        // Load the selected level using the selectedLevel variable
-        string levelToLoad = "Level" + selectedLevel;
-        SceneManager.LoadScene(levelToLoad);
+        levelManager.LoadLevel(levelManager.selectedLevel);
     }
 }

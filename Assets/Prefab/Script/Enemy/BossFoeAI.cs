@@ -38,6 +38,26 @@ public class BossFoeAI : MonoBehaviour
     [Header("Boss State")]
     [SerializeField] private BossState currentState;
 
+    [Header("Animation")]
+    public Animator animator;
+    
+    [Header("Audio")]
+    public AudioClip GrenadeThrowSound;
+    public AudioClip WalkingSound;
+    public AudioClip JumpSound;
+    public AudioClip SmackSound;
+    public AudioClip SlamSound;
+    public AudioClip ShootingSound;
+
+    public bool Dead = false;
+
+    private enum BossState
+    {
+        longDistanceAttack,
+        shortDistanceAttack,
+        Idle,
+    }
+
     private Vector3 toPlayer;
     private bool canAttack = true;
 
@@ -46,24 +66,6 @@ public class BossFoeAI : MonoBehaviour
     private NavMeshAgent navMeshAgent;
 
     private LayerMask obstacleLayer;
-
-    [Header("Animation")]
-    public Animator animator;
-    private enum BossState
-    {
-        longDistanceAttack,
-        shortDistanceAttack,
-        Idle,
-    }
-    [Header("Audio")]
-    public AudioClip grenadeThrowSound;
-    public AudioClip WalkingSound;
-    public AudioClip JumpSound;
-    public AudioClip SmackSound;
-    public AudioClip SlamSound;
-    public AudioClip ShootingSound;
-
-    public bool Dead = false;
     void Start()
     {
         obstacleLayer = LayerMask.GetMask("Wall","Player");
@@ -276,7 +278,7 @@ public class BossFoeAI : MonoBehaviour
             canAttack = false;
             animator.SetTrigger("Throw");
             GameObject grenade = Instantiate(grenadeObject, throwPoint.position, throwPoint.rotation);
-            SoundManager.Instance.PlaySound(grenadeThrowSound);
+            SoundManager.Instance.PlaySound(GrenadeThrowSound);
             Rigidbody grenadeRb = grenade.GetComponentInChildren<Rigidbody>();
 
             grenadeRb.velocity = toPlayer.normalized * toPlayer.magnitude;

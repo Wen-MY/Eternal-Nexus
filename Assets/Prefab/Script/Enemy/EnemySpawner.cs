@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [Header("Configuration of Spawner")]
     public float playerDetectionRange = 10f;
     public float spawnRange = 20f;
-
     public int maxEnemyCount = 4;
+    public int spawningDelay = 5;
+
+    [Header("Enemy to Spawn")]
     public GameObject enemyPrefab;
-    public Transform player;
-    public float spawningDelay;
+    //can be change to a list
+ 
+
+    private Transform player;
     private float lastTimeSpawn;
     // Start is called before the first frame update
     void Start()
@@ -22,9 +27,9 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        checkSpawnable();
+        CheckSpawnable();
     }
-    private void checkSpawnable()
+    private void CheckSpawnable()
     {
         if (Vector3.Distance(transform.position, player.position) <= playerDetectionRange)
         {
