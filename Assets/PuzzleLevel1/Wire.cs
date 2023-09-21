@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Wire : MonoBehaviour
@@ -9,6 +10,7 @@ public class Wire : MonoBehaviour
     public GameObject lightOn;
     Vector3 startPoint;
     Vector3 startPosition;
+    public Text text;
     public static int wireCount = 0;
     void Start()
     {
@@ -53,6 +55,7 @@ public class Wire : MonoBehaviour
         wireCount--;
         if (wireCount <= 0)
         {
+            text.enabled = true;
             SceneManager.LoadScene("Level2"); 
         }
     }

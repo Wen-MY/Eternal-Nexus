@@ -12,4 +12,9 @@ public class InventoryItem : MonoBehaviour
     [HideInInspector] public int count = 1; //each item starts with 1 quantity
     [Header("UI")]
     public Image image;
+
+        public void InitialiseItem(Item newItem) {
+        item = newItem;
+        image.sprite = newItem.image;
+    }
 }

@@ -106,35 +106,23 @@ public class InventoryManager : MonoBehaviour
         return itemType;
     }
 
-     public bool AddItem(Item itemToAdd) { /*
-        for (int i=0; i<inventorySlots.Length; i++) { 
-            InventorySlot slot = inventorySlots[i];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot != null && //it is occupied
-                itemInSlot.item == item && 
-                itemInSlot.count < maxStackedItems &&   //if the tool gt 4, need to add on another slot
-                itemInSlot.item.stackable == true) {
-                    itemInSlot.count++;
-                    //itemInSlot.RefreshCount();
-                    return true;
-            }
-        } */
+    void SpawnNewItem(Item item, InventorySlot slot) {
+        GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
+        InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
+        inventoryItem.InitialiseItem(item);
+    }
+
+     public void AddItem(Item itemToAdd) { 
 
         for (int i=0; i<inventorySlots.Length; i++) {
             InventorySlot slot = inventorySlots[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null) { //no occupied, then occupy it
-                GameObject newItemObject = Instantiate(inventoryItemPrefab, slot.transform);
-                InventoryItem newItem = newItemObject.GetComponent<InventoryItem>();
-                newItem.item = itemToAdd;
-                newItem.count = 1;
-                itemInSlot.count++;
-                Debug.Log(inventorySlots.Length); //used in touching lootable, but not working properly
-                return true;
+                SpawnNewItem(item,slot);
+                return;
             }
         }
-        return false; 
-    } 
+     }
 
     public Item GetSelectedItem(bool use) { 
         InventorySlot slot = inventorySlots[selectedSlot];
