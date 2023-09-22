@@ -9,7 +9,7 @@ public class SkillManagerInLevel : MonoBehaviour
 
     private void Start()
     {
-        int selectedSkill = PlayerPrefs.GetInt("SelectedSkill", 1); // Default to Skill ID 1 if not found
+        int selectedSkill = PlayerPrefs.GetInt("SelectedSkill"); // Default to Skill ID 1 if not found
 
         // Enable or disable scripts based on the selected skill
         switch (selectedSkill)

@@ -51,7 +51,6 @@ MonoBehaviour:
   - {fileID: 9130541470814860095}
   - {fileID: 2515575918195557514}
   - {fileID: 6101444066139932996}
-  pauseMenu: {fileID: 0}
 --- !u!1 &1861776332122726342
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c25be68e64185846874286250955991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSens: 500
+  mouseSens: 250
   orientation: {fileID: 697347297834818443}
   xRotation: 0
   yRotation: 0

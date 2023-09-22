@@ -23,16 +23,22 @@ public class HealthStaminaSystem : MonoBehaviour
         public Shield shieldUISlider;
     //put more sound here
     void Start()
-        {
-            currentHealth = maxHealth;
-            currentStamina = maxStamina;
-            staminaBar.maxValue = currentStamina;
+    {
+        healthBar = GameObject.Find("HealthBar").GetComponent<UnityEngine.UI.Image>();
+        staminaBar = GameObject.Find("Stamina").GetComponentInChildren<UnityEngine.UI.Slider>();
+        currentHealth = maxHealth;
+        currentStamina = maxStamina;
+        staminaBar.maxValue = currentStamina;
         //textMeshPro.enabled = false;
         Debug.Log("Attempting to find ShieldUI...");
-        shieldUISlider = GameObject.Find("ShieldUI").GetComponent<Shield>();
-            playerMovement = GetComponent<PlayerMovement>();
+        if (PlayerPrefs.GetInt("SelectedSkill") == 4)
+        {
+            shieldUISlider = GameObject.Find("ShieldUI").GetComponent<Shield>();
             shieldHealth = shieldUISlider.maxShieldHealth;
         }
+            playerMovement = GetComponent<PlayerMovement>();
+        
+    }
 
         void Update()
         {

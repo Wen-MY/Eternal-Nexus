@@ -37,7 +37,6 @@ public class FiringSystem : MonoBehaviour
     //gun shooting fx
     public GameObject muzzleFire, impactMark;
     public Animator animator;
-    public GameObject pauseMenu;
 
     private Vector3 accumulatedRecoil = Vector3.zero;
     public PlayerMovement movement;
@@ -45,7 +44,6 @@ public class FiringSystem : MonoBehaviour
     public AudioClip shootingSound;
     public AudioClip reloadingSound;
     public AudioClip dryFiringSound;
-    private Vector3 originalCameraPosition = new Vector3(0.0f, 0.5f, 0.0f);
 
     // Start is called before the first frame update
     void Start()
@@ -69,12 +67,9 @@ public class FiringSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!pauseMenu.activeInHierarchy)
-        {
-            animator.SetBool("isReloading", reloading);
-            animator.SetBool("IsShooting", shooting);
-            takeInput();
-        }
+        animator.SetBool("isReloading", reloading);
+        animator.SetBool("IsShooting", shooting);
+        takeInput();
         // Check if the ammo count is zero and display a reload reminder
         if (bulletsInMagazine == 0)
         {
