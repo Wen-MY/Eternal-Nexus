@@ -16,7 +16,7 @@ public class SpawnManager : MonoBehaviour
         ShuffleArray(spawnPoints);
 
         // Spawn three items at random spawn points.
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 10; i++)
         {
             Instantiate(itemPrefab, spawnPoints[i].position, Quaternion.identity);
         }
