@@ -11,6 +11,10 @@ public class MainMenu : MonoBehaviour {
         SoundManager.Instance.ChangeBGM(mainMenuBGM);
     }
 
+    public void NewGame() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quit!");
