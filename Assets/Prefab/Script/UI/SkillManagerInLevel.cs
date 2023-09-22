@@ -5,7 +5,7 @@ public class SkillManagerInLevel : MonoBehaviour
     public Flight flyScript;
     public PlayerTeleporterManager teleportScript;
     public Dashing dashScript;
-    public GameObject shieldUI; 
+    public Shield shieldScript;
 
     private void Start()
     {
@@ -18,37 +18,25 @@ public class SkillManagerInLevel : MonoBehaviour
                 flyScript.enabled = true;
                 teleportScript.enabled = false;
                 dashScript.enabled = false;
-                if (shieldUI != null)
-                {
-                    shieldUI.SetActive(false); // Deactivate shieldUI for skill 1
-                }
+                shieldScript.enabled = false;
                 break;
             case 2:
                 flyScript.enabled = false;
                 teleportScript.enabled = true;
                 dashScript.enabled = false;
-                if (shieldUI != null)
-                {
-                    shieldUI.SetActive(false); // Deactivate shieldUI for skill 2
-                }
+                shieldScript.enabled = false;
                 break;
             case 3:
                 flyScript.enabled = false;
                 teleportScript.enabled = false;
                 dashScript.enabled = true;
-                if (shieldUI != null)
-                {
-                    shieldUI.SetActive(false); // Deactivate shieldUI for skill 3
-                }
+                shieldScript.enabled = false;
                 break;
             case 4:
                 flyScript.enabled = false;
                 teleportScript.enabled = false;
                 dashScript.enabled = false;
-                if (shieldUI != null)
-                {
-                    shieldUI.SetActive(true); // Activate shieldUI for skill 4
-                }
+                shieldScript.enabled = true;
                 break;
             default:
                 // Handle invalid skill ID or other cases here
