@@ -19,7 +19,7 @@ public class Shield : MonoBehaviour
     public Slider cooldownSlider;
 
     private bool isSkillReady = true; // Track if the skill is ready
-    private float cooldownStartTime; // Time when the cooldown starts
+    private float skillActivatedTime; // Time when the skill was last activated
 
     private void Start()
     {
@@ -30,23 +30,42 @@ public class Shield : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && isSkillReady)
+        if (isSkillReady && !isShieldActive && Time.time >= shieldEndTime)
         {
-            ActivateShield();
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                ActivateShield();
+            }
         }
 
         if (isShieldActive && Time.time >= shieldEndTime)
         {
             BreakShield();
-            isSkillReady = true; // Set the skill as ready
-            Debug.Log("Skill is ready to use!");
         }
 
-        if (!isShieldActive)
+        if (!isSkillReady)
         {
-            // Calculate the cooldown progress based on the cooldown start time
-            float cooldownProgress = Mathf.Clamp01((Time.time - cooldownStartTime) / shieldCooldown);
-            cooldownSlider.value = 1f - cooldownProgress;
+            float timeSinceActivation = Time.time - skillActivatedTime;
+
+            if (timeSinceActivation <= shieldDuration)
+            {
+                // Skill is active, set slider to decrease over 10 seconds
+                float sliderProgress = Mathf.Clamp01(1f - (timeSinceActivation / shieldDuration));
+                cooldownSlider.value = sliderProgress;
+            }
+            else if (timeSinceActivation <= shieldDuration + shieldCooldown)
+            {
+                // Skill is in cooldown, reload the slider over 15 seconds
+                float cooldownProgress = Mathf.Clamp01((timeSinceActivation - shieldDuration) / shieldCooldown);
+                cooldownSlider.value = cooldownProgress;
+            }
+            else
+            {
+                // Skill is ready for use
+                cooldownSlider.value = 1f;
+                isSkillReady = true;
+                Debug.Log("Skill is ready to use!");
+            }
         }
     }
 
@@ -55,7 +74,7 @@ public class Shield : MonoBehaviour
         currentShield = Instantiate(shieldPrefab, transform.position, Quaternion.identity, transform);
         isShieldActive = true;
         shieldEndTime = Time.time + shieldDuration;
-        cooldownStartTime = shieldEndTime + 10f; // Start cooldown after 10 seconds
+        skillActivatedTime = Time.time; // Record the time when the skill was activated
         isSkillReady = false; // Skill is not ready during cooldown
         Debug.Log("Shield activated.");
     }
