@@ -101,6 +101,19 @@ public class PlayerMovement : MonoBehaviour
         animationHandler();
 
     }
+        //SPRINTING 
+    public void EnableSprinting() {
+        if (currentState == MovementState.sprinting) {
+            moveSpeed = sprintSpeed;
+        }
+        else if (currentState == MovementState.walking) {
+            moveSpeed = walkSpeed;
+        }
+    }
+    public void DisableSprinting() {
+        currentState = MovementState.walking;
+        moveSpeed = walkSpeed;
+    }
    
     private void getInput()
     {
