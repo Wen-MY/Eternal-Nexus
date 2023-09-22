@@ -52,7 +52,6 @@ MonoBehaviour:
   - {fileID: 2515575918195557514}
   - {fileID: 6101444066139932996}
   pauseMenu: {fileID: 0}
-  keypad: {fileID: 0}
 --- !u!1 &1861776332122726342
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +325,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5440787735157322406}
   - component: {fileID: 7408978343963207283}
-  - component: {fileID: 5491222729482668320}
   - component: {fileID: 4647794425382424030}
   - component: {fileID: 5590299277294703917}
   - component: {fileID: 6229460123125806180}
@@ -387,25 +385,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &5491222729482668320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7846320260995386857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16d48b7a02e54a34abed005a0d8fd125, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
-  pauseButton: {fileID: 0}
-  darkPanel: {fileID: 0}
-  cameraController: {fileID: 0}
-  playerMovement: {fileID: 5590299277294703917}
-  weaponSwitcher: {fileID: 2368664256121463695}
-  inventoryManager: {fileID: 0}
 --- !u!114 &4647794425382424030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +415,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7846320260995386857}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 558bd4bff4cadc1478ce017cf50cfd10, type: 3}
   m_Name: 
@@ -572,6 +551,7 @@ MonoBehaviour:
   maxShieldHealth: 100
   shieldDuration: 10
   shieldCooldown: 15
+  cooldownSlider: {fileID: 0}
 --- !u!1 &9188298138605555935
 GameObject:
   m_ObjectHideFlags: 0

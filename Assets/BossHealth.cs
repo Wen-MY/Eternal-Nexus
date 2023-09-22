@@ -21,7 +21,7 @@ public class BossHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
-            Debug.Log("Boss defeated!");
+            //Debug.Log("Boss defeated!");
         }
     }
 }

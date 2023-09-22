@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class FiringSystem : MonoBehaviour
 {
-    public GameObject pauseMenu;
     //Gun Config
     [Header ("Gun Configuration")]
     public int damage;
@@ -38,6 +37,7 @@ public class FiringSystem : MonoBehaviour
     //gun shooting fx
     public GameObject muzzleFire, impactMark;
     public Animator animator;
+    public GameObject pauseMenu;
 
     private Vector3 accumulatedRecoil = Vector3.zero;
     public PlayerMovement movement;

@@ -14,16 +14,16 @@ public class PauseMenu : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        weaponSwitcher = GameObject.Find("Gun Holder").GetComponent<WeaponSwitcher>();
     }
 
     void Update()
     {
 
-        if (pauseMenu.activeInHierarchy)
+        if (pauseMenu.activeSelf)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            playerMovement.enabled = false;
             weaponSwitcher.enabled = false;
             inventoryManager.enabled = false;
 
@@ -32,7 +32,6 @@ public class PauseMenu : MonoBehaviour
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            playerMovement.enabled = true;
             weaponSwitcher.enabled = true;
             inventoryManager.enabled = true;
         }

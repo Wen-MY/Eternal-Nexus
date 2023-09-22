@@ -125,6 +125,7 @@ MonoBehaviour:
   muzzleFire: {fileID: 1743301284569550, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
   impactMark: {fileID: 1341869769842038, guid: 8b7a1ffda5bb7474b8fae646c45ce7b4, type: 3}
   animator: {fileID: 0}
+  pauseMenu: {fileID: 4203592736687105013, guid: a0b3cc0fdcb497f439500fb4e5787aee, type: 3}
   movement: {fileID: 0}
   shootingSound: {fileID: 8300000, guid: 5207b2a445fcb144281ab5395fe95c1d, type: 3}
   reloadingSound: {fileID: 8300000, guid: db22c6fd526ea3441a9c2e843a58dfa9, type: 3}

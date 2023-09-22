@@ -122,7 +122,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2570044767550544762}
+      - m_Target: {fileID: 7760040703434494451}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2570044767550544762}
+      - m_Target: {fileID: 7760040703434494451}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Pause
         m_Mode: 1
@@ -952,6 +952,7 @@ GameObject:
   - component: {fileID: 6032552308151192093}
   - component: {fileID: 6767655865267823810}
   - component: {fileID: 8410181706418356431}
+  - component: {fileID: 7760040703434494451}
   m_Layer: 5
   m_Name: Pause Canvas
   m_TagString: Untagged
@@ -1046,6 +1047,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7760040703434494451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4203592736687105013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16d48b7a02e54a34abed005a0d8fd125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 5902832649057208334}
+  pauseButton: {fileID: 2737236065941276044}
+  darkPanel: {fileID: 8072830026911790076}
+  playerMovement: {fileID: 5590299277294703917, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
+  weaponSwitcher: {fileID: 0}
+  inventoryManager: {fileID: 0}
 --- !u!1 &5311437984246966175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,7 +1187,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2570044767550544762}
+      - m_Target: {fileID: 7760040703434494451}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -1326,7 +1345,6 @@ GameObject:
   - component: {fileID: 6103637468789316984}
   - component: {fileID: 5851672855297602362}
   - component: {fileID: 6252732462059935271}
-  - component: {fileID: 2570044767550544762}
   m_Layer: 5
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -1394,24 +1412,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2570044767550544762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5902832649057208334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16d48b7a02e54a34abed005a0d8fd125, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 5902832649057208334}
-  pauseButton: {fileID: 2737236065941276044}
-  darkPanel: {fileID: 8072830026911790076}
-  playerMovement: {fileID: 5590299277294703917, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-  weaponSwitcher: {fileID: 0}
-  inventoryManager: {fileID: 0}
 --- !u!1 &6209878996543972914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2570044767550544762}
+      - m_Target: {fileID: 7760040703434494451}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
