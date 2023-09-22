@@ -6,11 +6,6 @@ public class WeaponSwitcher : MonoBehaviour
 {
     // Start is called before the first frame update
     public List<GameObject> weapons = new List<GameObject>();
-<<<<<<< Updated upstream
-=======
-    public GameObject pauseMenu;
-    public GameObject keyPad;
->>>>>>> Stashed changes
     private int currentWeaponIndex = 0;
     private bool isSwitching = false;
     private AmmoManager ammoManager;
@@ -25,14 +20,7 @@ public class WeaponSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
         takeInput();
-=======
-        if (!pauseMenu.activeInHierarchy && !keyPad.activeInHierarchy)
-        {
-            takeInput();
-        }
->>>>>>> Stashed changes
     }
 
     private void takeInput()
