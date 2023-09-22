@@ -408,6 +408,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 0}
   gunHolder: {fileID: 249605412244979442}
   hurtSound: {fileID: 8300000, guid: 032a4f39620b7994aa36483d2e211ff1, type: 3}
+  shieldUISlider: {fileID: 0}
 --- !u!114 &5590299277294703917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,7 +483,7 @@ MonoBehaviour:
   flyScript: {fileID: 3354502549194588351}
   teleportScript: {fileID: 7289421472684243223}
   dashScript: {fileID: 1414979499620360026}
-  shieldScript: {fileID: 5942692942448104612}
+  shieldUI: {fileID: 7366408155217575663, guid: 9a8fb115d50270848840870f9dc3281a, type: 3}
 --- !u!114 &3354502549194588351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,7 +552,7 @@ MonoBehaviour:
   maxShieldHealth: 100
   shieldDuration: 10
   shieldCooldown: 15
-  cooldownSlider: {fileID: 0}
+  cooldownSlider: {fileID: 210968842216581890, guid: 9a8fb115d50270848840870f9dc3281a, type: 3}
 --- !u!1 &9188298138605555935
 GameObject:
   m_ObjectHideFlags: 0
