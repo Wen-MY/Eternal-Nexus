@@ -29,11 +29,9 @@ public class HealthStaminaSystem : MonoBehaviour
         currentHealth = maxHealth;
         currentStamina = maxStamina;
         staminaBar.maxValue = currentStamina;
-        //textMeshPro.enabled = false;
-        Debug.Log("Attempting to find ShieldUI...");
         if (PlayerPrefs.GetInt("SelectedSkill") == 4)
         {
-            shieldUISlider = GameObject.Find("ShieldUI").GetComponent<Shield>();
+            shieldUISlider = GameObject.Find("Skill Canvas").GetComponentInChildren<Shield>();
             shieldHealth = shieldUISlider.maxShieldHealth;
         }
             playerMovement = GetComponent<PlayerMovement>();

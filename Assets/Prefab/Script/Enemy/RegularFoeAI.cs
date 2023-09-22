@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class RegularFoeAI : MonoBehaviour
 {
+    [Header("References")]
     public Transform player;
     public FoeAttributes foeAttributes;
     public Animator animator;
@@ -22,7 +23,6 @@ public class RegularFoeAI : MonoBehaviour
     private float currentPatrolDuration = 4f;
     private bool canAttack = true;
     private bool attacking = false;
-    public float attackDamage;
     private FoeAttributes.FoeState currentState = FoeAttributes.FoeState.Idle;
     // Start is called before the first frame update
     void Start()

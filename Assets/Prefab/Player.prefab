@@ -421,10 +421,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  walkSpeed: 50
+  walkSpeed: 60
   sprintSpeed: 100
-  groundDrag: 6
-  dashSpeed: 150
+  groundDrag: 5
+  dashSpeed: 200
   jumpMagnitude: 8
   jumpCooldown: 0.75
   gravityScale: 0.5
@@ -482,7 +482,7 @@ MonoBehaviour:
   flyScript: {fileID: 3354502549194588351}
   teleportScript: {fileID: 7289421472684243223}
   dashScript: {fileID: 1414979499620360026}
-  shieldUI: {fileID: 7366408155217575663, guid: 9a8fb115d50270848840870f9dc3281a, type: 3}
+  shieldUI: {fileID: 0}
 --- !u!114 &3354502549194588351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,13 +512,13 @@ MonoBehaviour:
   orientation: {fileID: 697347297834818443}
   playerCam: {fileID: 7909324937075119791}
   dashForce: 30
-  dashUpwardForce: 2
+  dashUpwardForce: 1
   dashDuration: 1
   useCameraForward: 1
   allowAllDirections: 1
   disableGravity: 0
   resetVel: 1
-  dashCd: 1
+  dashCd: 5
   dashKey: 113
 --- !u!114 &7289421472684243223
 MonoBehaviour:
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7846320260995386857}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be3a708d958d4f84dabc8451aa9e4c3c, type: 3}
   m_Name: 

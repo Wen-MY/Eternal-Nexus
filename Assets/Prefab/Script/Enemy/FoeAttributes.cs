@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Foe",menuName ="Enemy/Foe Attributes")]
 public class FoeAttributes : ScriptableObject
 {
+    [Header("Configuration")]
     public float chaseRange = 10f;
     public float attackRange = 2f;
     public float patrolSpeed = 2f;

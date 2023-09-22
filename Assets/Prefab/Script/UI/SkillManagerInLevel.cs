@@ -9,6 +9,7 @@ public class SkillManagerInLevel : MonoBehaviour
 
     private void Start()
     {
+        shieldUI = GameObject.Find("ShieldUI");
         int selectedSkill = PlayerPrefs.GetInt("SelectedSkill"); // Default to Skill ID 1 if not found
 
         // Enable or disable scripts based on the selected skill
@@ -18,37 +19,27 @@ public class SkillManagerInLevel : MonoBehaviour
                 flyScript.enabled = true;
                 teleportScript.enabled = false;
                 dashScript.enabled = false;
-                if (shieldUI != null)
-                {
-                    shieldUI.SetActive(false); // Deactivate shieldUI for skill 1
-                }
+                shieldUI.SetActive(false); // Deactivate shieldUI for skill 1
                 break;
             case 2:
                 flyScript.enabled = false;
                 teleportScript.enabled = true;
                 dashScript.enabled = false;
                 if (shieldUI != null)
-                {
-                    shieldUI.SetActive(false); // Deactivate shieldUI for skill 2
-                }
+                shieldUI.SetActive(false); // Deactivate shieldUI for skill 2
                 break;
             case 3:
                 flyScript.enabled = false;
                 teleportScript.enabled = false;
                 dashScript.enabled = true;
-                if (shieldUI != null)
-                {
-                    shieldUI.SetActive(false); // Deactivate shieldUI for skill 3
-                }
+                shieldUI.SetActive(false); // Deactivate shieldUI for skill 3
                 break;
             case 4:
                 flyScript.enabled = false;
                 teleportScript.enabled = false;
                 dashScript.enabled = false;
-                if (shieldUI != null)
-                {
-                    shieldUI.SetActive(true); // Activate shieldUI for skill 4
-                }
+                shieldUI.SetActive(true); // Activate shieldUI for skill 4
+                
                 break;
             default:
                 // Handle invalid skill ID or other cases here

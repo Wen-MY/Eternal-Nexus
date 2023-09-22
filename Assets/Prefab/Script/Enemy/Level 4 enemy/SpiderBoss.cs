@@ -46,96 +46,103 @@ public class SpiderBoss : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
         Debug.Log("Current State: " + currentState);
 
-        
 
 
-        switch (currentState)
+        if (gameObject.GetComponent<Bot>().getHealth() > 0)
         {
-            case BossState.Idle:
-                bossAnimator.SetTrigger("Idle"); // Trigger the "Idle" animation
-                if (distanceToPlayer <= attackRange)
-                {
-                    bossHealth.SetActive(true);
-                    float randomAction = Random.Range(0f, 1f);
-                    if (randomAction <= 0.3f)
+            switch (currentState)
+            {
+                case BossState.Idle:
+                    bossAnimator.SetTrigger("Idle"); // Trigger the "Idle" animation
+                    if (distanceToPlayer <= attackRange)
                     {
-                        // Move to player
-                        currentState = BossState.MovingToPlayer;
+                        bossHealth.SetActive(true);
+                        float randomAction = Random.Range(0f, 1f);
+                        if (randomAction <= 0.3f)
+                        {
+                            // Move to player
+                            currentState = BossState.MovingToPlayer;
+
+                        }
+                        else if (randomAction <= 0.6f)
+                        {
+                            // Start shooting
+                            currentState = BossState.Shooting;
+                            StartCoroutine(Shoot());
+
+                        }
+                        else if (randomAction <= 0.9f)
+                        {
+                            // Start burst shooting
+                            currentState = BossState.BurstShooting;
+                            StartCoroutine(BurstShoot());
+
+                        }
+                        else
+                        {
+                            // Jump towards player
+                            currentState = BossState.Jumping;
+                            JumpTowardsPlayer();
+
+                        }
+                    }
+                    break;
+
+                case BossState.MovingToPlayer:
+                    bossAnimator.SetTrigger("MoveToPlayer"); // Trigger the "MoveToPlayer" animation
+                    if (distanceToPlayer <= attackDistance)
+                    {
+                        currentState = BossState.Attacking;
 
                     }
-                    else if (randomAction <= 0.6f)
+
+                    if (!isChasing)
                     {
-                        // Start shooting
-                        currentState = BossState.Shooting;
-                        StartCoroutine(Shoot());
-
+                        StartChasing();
                     }
-                    else if (randomAction <= 0.9f)
+
+                    // Check if we've been chasing for 5 seconds
+                    if (Time.time - chaseStartTime >= 5f)
                     {
-                        // Start burst shooting
-                        currentState = BossState.BurstShooting;
-                        StartCoroutine(BurstShoot());
-
+                        isChasing = false; // Stop chasing
+                        currentState = BossState.Idle;
+                        return; // Exit the function
                     }
-                    else
-                    {
-                        // Jump towards player
-                        currentState = BossState.Jumping;
-                        JumpTowardsPlayer();
 
-                    }
-                }
-                break;
+                    MoveTowardsPlayer();
+                    Debug.Log("Moving towards player...");
+                    break;
 
-            case BossState.MovingToPlayer:
-                bossAnimator.SetTrigger("MoveToPlayer"); // Trigger the "MoveToPlayer" animation
-                if (distanceToPlayer <= attackDistance)
-                {
-                    currentState = BossState.Attacking;
+                case BossState.Shooting:
+                    bossAnimator.SetTrigger("Shooting"); // Trigger the "Shooting" animation
+                                                         // Shooting logic is handled in the Shoot coroutine
+                    break;
 
-                }
+                case BossState.BurstShooting:
+                    // Burst shooting logic is handled in the BurstShoot coroutine
+                    bossAnimator.SetTrigger("BurstShooting"); // Trigger the "BurstShooting" animation
+                    break;
 
-                if (!isChasing)
-                {
-                    StartChasing();
-                }
+                case BossState.Jumping:
+                    bossAnimator.SetTrigger("Jumping"); // Trigger the "Jumping" animation
+                                                        // Jump logic is handled in the JumpTowardsPlayer method
+                    break;
 
-                // Check if we've been chasing for 5 seconds
-                if (Time.time - chaseStartTime >= 5f)
-                {
-                    isChasing = false; // Stop chasing
-                    currentState = BossState.Idle;
-                    return; // Exit the function
-                }
+                case BossState.Attacking:
+                    // Implement the attack logic here
+                    AttackPlayer();
+                    bossAnimator.SetTrigger("Attacking");
+                    break;
 
-                MoveTowardsPlayer();
-                Debug.Log("Moving towards player...");
-                break;
-
-            case BossState.Shooting:
-                bossAnimator.SetTrigger("Shooting"); // Trigger the "Shooting" animation
-                // Shooting logic is handled in the Shoot coroutine
-                break;
-
-            case BossState.BurstShooting:
-                // Burst shooting logic is handled in the BurstShoot coroutine
-                bossAnimator.SetTrigger("BurstShooting"); // Trigger the "BurstShooting" animation
-                break;
-
-            case BossState.Jumping:
-                bossAnimator.SetTrigger("Jumping"); // Trigger the "Jumping" animation
-                // Jump logic is handled in the JumpTowardsPlayer method
-                break;
-
-            case BossState.Attacking:
-                // Implement the attack logic here
-                AttackPlayer();
-                bossAnimator.SetTrigger("Attacking");
-                break;
-
-            default:
-                break;
+                default:
+                    break;
+            }
         }
+        else
+            currentState = BossState.Idle;
+
+
+
     }
 
 

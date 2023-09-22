@@ -4498,7 +4498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6238266592849411157, guid: 5e9269927b76316478f581dfd7ec3093, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 420
       objectReference: {fileID: 0}
     - target: {fileID: 6459342399936701072, guid: 5e9269927b76316478f581dfd7ec3093, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4575,6 +4575,10 @@ PrefabInstance:
     - target: {fileID: 8027979648671004575, guid: 5e9269927b76316478f581dfd7ec3093, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299530853012494894, guid: 5e9269927b76316478f581dfd7ec3093, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8924074569688714803, guid: 5e9269927b76316478f581dfd7ec3093, type: 3}
       propertyPath: m_AnchorMax.y
@@ -9239,7 +9243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7587066874930857300, guid: 37441b61be2ba22439824a2356b8dfb8, type: 3}
       propertyPath: maxHealth
-      value: 10000
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 7652793697677250848, guid: 37441b61be2ba22439824a2356b8dfb8, type: 3}
       propertyPath: m_Layer
@@ -15547,11 +15551,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 015f72cc39e659f429389c388a1ba131, type: 3}
---- !u!1 &1102693938 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6564976439214808239, guid: 015f72cc39e659f429389c388a1ba131, type: 3}
-  m_PrefabInstance: {fileID: 1102693937}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1108287062 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100784, guid: 1829a3413aea1244186f1536d627c48f, type: 3}
@@ -19610,17 +19609,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4301644, guid: 1829a3413aea1244186f1536d627c48f, type: 3}
---- !u!114 &1367227535 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2368664256121463695, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-  m_PrefabInstance: {fileID: 1796137911}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5738205d1886f77468aabb012a0bff08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1370575912 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 101068, guid: 1829a3413aea1244186f1536d627c48f, type: 3}
@@ -24672,17 +24660,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1661582449 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5590299277294703917, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-  m_PrefabInstance: {fileID: 1796137911}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 558bd4bff4cadc1478ce017cf50cfd10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1666751267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 101540, guid: 1829a3413aea1244186f1536d627c48f, type: 3}
@@ -26653,30 +26630,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 920003101415308631, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 920003101415308631, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: reloadText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2368664256121463695, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4647794425382424030, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: bot
       value: 
       objectReference: {fileID: 1182285419}
-    - target: {fileID: 4647794425382424030, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4647794425382424030, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: staminaBar
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4647794425382424030, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: gameOverScreen
       value: 
@@ -26725,57 +26682,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5491222729482668320, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: darkPanel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5491222729482668320, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5491222729482668320, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: pauseButton
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5491222729482668320, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: playerMovement
-      value: 
-      objectReference: {fileID: 1661582449}
-    - target: {fileID: 5491222729482668320, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: weaponSwitcher
-      value: 
-      objectReference: {fileID: 1367227535}
-    - target: {fileID: 5491222729482668320, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: inventoryManager
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5590299277294703917, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5808425389196528354, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5808425389196528354, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: reloadText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5942692942448104612, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7255588846261435334, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: GameOverPanel
-      value: 
-      objectReference: {fileID: 1102693938}
     - target: {fileID: 7846320260995386857, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827389552699158681, guid: 9416171f53cfdaf409993d5b563b80d0, type: 3}
-      propertyPath: pauseMenu
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

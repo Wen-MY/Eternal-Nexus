@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public PlayerMovement playerMovement;
     public WeaponSwitcher weaponSwitcher;
     public InventoryManager inventoryManager;
+    public FiringSystem firingSystem;
 
     void Start()
     {
@@ -26,6 +27,8 @@ public class PauseMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             weaponSwitcher.enabled = false;
             inventoryManager.enabled = false;
+
+
 
         }
         else
@@ -66,6 +69,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Exit()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
     }
 }

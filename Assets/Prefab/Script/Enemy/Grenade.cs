@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Grenade : MonoBehaviour
 {
+    [Header("Configuration")]
     public float damage = 20f;
     public float explodeForce = 10f;
     public float explodeRadius = 5f;
     public float explosionDelay = 0.8f;
+
+
+    [Header("References")]
     public GameObject explosionEffect;
     public AudioClip explosionSound;
 

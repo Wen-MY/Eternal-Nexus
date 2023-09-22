@@ -15,7 +15,7 @@ public class BossStageActivator : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-    private void checkSpawnable()
+    private void CheckSpawnable()
     {
         if (Vector3.Distance(transform.position, player.position) <= playerDetectionRange)
         {
@@ -30,6 +30,6 @@ public class BossStageActivator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkSpawnable();
+        CheckSpawnable();
     }
 }
