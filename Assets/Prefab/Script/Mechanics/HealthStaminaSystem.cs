@@ -17,25 +17,26 @@ public class HealthStaminaSystem : MonoBehaviour
         public Bot bot;
         public GameOverScreen gameOverScreen;
         public GameObject gunHolder;
-        private Shield shieldController;
         private PlayerMovement playerMovement;
         private float shieldHealth;
         public AudioClip hurtSound;
+        public Shield shieldUISlider;
     //put more sound here
     void Start()
         {
             currentHealth = maxHealth;
             currentStamina = maxStamina;
             staminaBar.maxValue = currentStamina;
-            //textMeshPro.enabled = false;
-            shieldController = GetComponent<Shield>();
+        //textMeshPro.enabled = false;
+        Debug.Log("Attempting to find ShieldUI...");
+        shieldUISlider = GameObject.Find("ShieldUI").GetComponent<Shield>();
             playerMovement = GetComponent<PlayerMovement>();
-            shieldHealth = shieldController.maxShieldHealth;
+            shieldHealth = shieldUISlider.maxShieldHealth;
         }
 
         void Update()
         {
-        bool isShieldActive = shieldController != null && shieldController.IsShieldActive();
+        bool isShieldActive = shieldUISlider != null && shieldUISlider.IsShieldActive();
 
         if (isShieldActive)
         {
@@ -44,7 +45,7 @@ public class HealthStaminaSystem : MonoBehaviour
             if (shieldHealth <= 0)
             {
                 shieldHealth = 0;
-                shieldController.BreakShield();
+                shieldUISlider.BreakShield();
             }
         }
         else
@@ -83,9 +84,9 @@ public class HealthStaminaSystem : MonoBehaviour
             Bot enemyBot = collision.gameObject.GetComponent<Bot>();
             if (enemyBot != null)
             {
-                if (shieldController != null && shieldController.IsShieldActive())
+                if (shieldUISlider != null && shieldUISlider.IsShieldActive())
                 {
-                    shieldController.TakeDamage(enemyBot.damageOnTouch); // Apply damage to shield
+                    shieldUISlider.TakeDamage(enemyBot.damageOnTouch); // Apply damage to shield
                 }
                 else
                 {
@@ -136,7 +137,7 @@ public class HealthStaminaSystem : MonoBehaviour
         if (shieldHealth <= 0)
         {
             shieldHealth = 0;
-            shieldController.BreakShield();
+            shieldUISlider.BreakShield();
         }
     }
 

@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
         skillSelectionPanel.SetActive(false);
         LoadSavedLevel(); // Load the previously selected level
     }
+
     public void SelectLevel(int lvlId)
     {
         Debug.Log("Selected level: " + lvlId);
@@ -69,7 +70,7 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    private void LoadSavedLevel()
+    public void LoadSavedLevel()
     {
         selectedLevel = PlayerPrefs.GetInt("SelectedLevel", 1); // Default to level 1 if not found
     }
