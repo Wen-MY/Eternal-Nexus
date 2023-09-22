@@ -332,7 +332,6 @@ GameObject:
   - component: {fileID: 3354502549194588351}
   - component: {fileID: 1414979499620360026}
   - component: {fileID: 7289421472684243223}
-  - component: {fileID: 5942692942448104612}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -385,6 +384,27 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+<<<<<<< Updated upstream
+=======
+--- !u!114 &5491222729482668320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7846320260995386857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16d48b7a02e54a34abed005a0d8fd125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
+  pauseButton: {fileID: 0}
+  darkPanel: {fileID: 0}
+  playerMovement: {fileID: 5590299277294703917}
+  weaponSwitcher: {fileID: 2368664256121463695}
+  inventoryManager: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!114 &4647794425382424030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +428,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 0}
   gunHolder: {fileID: 249605412244979442}
   hurtSound: {fileID: 8300000, guid: 032a4f39620b7994aa36483d2e211ff1, type: 3}
+  shieldUISlider: {fileID: 60780189171006892, guid: 9a8fb115d50270848840870f9dc3281a, type: 3}
 --- !u!114 &5590299277294703917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,7 +503,7 @@ MonoBehaviour:
   flyScript: {fileID: 3354502549194588351}
   teleportScript: {fileID: 7289421472684243223}
   dashScript: {fileID: 1414979499620360026}
-  shieldScript: {fileID: 5942692942448104612}
+  shieldUI: {fileID: 7366408155217575663, guid: 9a8fb115d50270848840870f9dc3281a, type: 3}
 --- !u!114 &3354502549194588351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,6 +556,7 @@ MonoBehaviour:
   teleporterPrefab: {fileID: 3885582843296790221, guid: 8dfb277a2b71b1d4689c9dbff58fb9c3, type: 3}
   teleportCooldown: 8
   placeTeleporterCooldown: 5
+<<<<<<< Updated upstream
 --- !u!114 &5942692942448104612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,6 +574,8 @@ MonoBehaviour:
   shieldDuration: 10
   shieldCooldown: 15
   cooldownSlider: {fileID: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &9188298138605555935
 GameObject:
   m_ObjectHideFlags: 0
