@@ -19,6 +19,7 @@ public class FiringSystem : MonoBehaviour
     public bool ready;
     public bool reloading;
 
+
     private AmmoManager ammoManager;
     public TextMeshProUGUI reloadText;
 
@@ -36,12 +37,6 @@ public class FiringSystem : MonoBehaviour
     //gun shooting fx
     public GameObject muzzleFire, impactMark;
     public Animator animator;
-<<<<<<< Updated upstream
-=======
-
-    public GameObject pauseMenu;
-    public GameObject keyPad;
->>>>>>> Stashed changes
 
     private Vector3 accumulatedRecoil = Vector3.zero;
     public PlayerMovement movement;
@@ -72,18 +67,9 @@ public class FiringSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
         animator.SetBool("isReloading", reloading);
         animator.SetBool("IsShooting", shooting);
         takeInput();
-=======
-        if (!pauseMenu.activeInHierarchy && !keyPad.activeInHierarchy)
-        {
-            animator.SetBool("isReloading", reloading);
-            animator.SetBool("IsShooting", shooting);
-            takeInput();
-        }
->>>>>>> Stashed changes
         // Check if the ammo count is zero and display a reload reminder
         if (bulletsInMagazine == 0)
         {
