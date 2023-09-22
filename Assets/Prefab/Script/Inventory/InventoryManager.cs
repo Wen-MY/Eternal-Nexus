@@ -76,10 +76,6 @@ public class InventoryManager : MonoBehaviour
                 HSSystem.IncreaseEnergy();
                 ConsumeSelectedItem();
             }
-            else if (itemType.type == ItemType.Ammos)
-            {
-                //Actions this no need ady
-            }
             else if (itemType.type == ItemType.Gems)
             {
                 //Actions
@@ -106,23 +102,22 @@ public class InventoryManager : MonoBehaviour
         return itemType;
     }
 
-    void SpawnNewItem(Item item, InventorySlot slot) {
-        GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
-        InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
-        inventoryItem.InitialiseItem(item);
-    }
+        public void AddItem(Item item) { 
 
-     public void AddItem(Item itemToAdd) { 
-
-        for (int i=0; i<inventorySlots.Length; i++) {
-            InventorySlot slot = inventorySlots[i];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot == null) { //no occupied, then occupy it
-                SpawnNewItem(item,slot);
-                return;
+            for (int i=0; i<inventorySlots.Length; i++) {
+                InventorySlot slot = inventorySlots[i];
+                InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+                if (itemInSlot == null) { //no occupied, then occupy it
+                    SpawnNewItem(item,slot);
+                    return;
+                }
             }
         }
-     }
+        void SpawnNewItem(Item item, InventorySlot slot) {
+            GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
+            InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
+            inventoryItem.InitialiseItem(item);
+        }
 
     public Item GetSelectedItem(bool use) { 
         InventorySlot slot = inventorySlots[selectedSlot];
@@ -146,22 +141,6 @@ public class InventoryManager : MonoBehaviour
         
     }
     public void ConsumeSelectedItem() {
-        /*
-        //check if it has ammos when reloading? 
-         if (reloading == true) {
-            for (int i=0; i<inventorySlots.Length; i++) {
-            InventorySlot slot = inventorySlots[i];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            Item itemType = itemInSlot.item;
-            if (itemInSlot != null && //it is occupied
-                itemType.type == ItemType.Ammos) {
-                    Destroy(itemInSlot.gameObject);
-                    //itemInSlot.RefreshCount();
-                    reloading = false;
-                }
-            }
-         }
-         */
             InventorySlot slot = inventorySlots[selectedSlot];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot != null) {

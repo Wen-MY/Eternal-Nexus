@@ -29,6 +29,8 @@ public class HealthStaminaSystem : MonoBehaviour
         currentHealth = maxHealth;
         currentStamina = maxStamina;
         staminaBar.maxValue = currentStamina;
+        textMeshPro.enabled = false;
+        Debug.Log("Attempting to find ShieldUI...");
         if (PlayerPrefs.GetInt("SelectedSkill") == 4)
         {
             shieldUISlider = GameObject.Find("Skill Canvas").GetComponentInChildren<Shield>();
@@ -78,6 +80,14 @@ public class HealthStaminaSystem : MonoBehaviour
                
                 staminaBar.value = currentStamina;
             }
+            if (currentStamina <= 5) {
+                    textMeshPro.enabled=true;
+                    playerMovement.DisableSprinting();
+                }
+                else if (currentStamina >5) {
+                    textMeshPro.enabled=false;
+                    playerMovement.EnableSprinting();
+                }
 
     }
 

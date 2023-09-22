@@ -7,13 +7,18 @@ using TMPro;
 
 public class InventoryItem : MonoBehaviour
 {
-    public TextMeshProUGUI countText;
     public Item item;
-    [HideInInspector] public int count = 1; //each item starts with 1 quantity
+    
     [Header("UI")]
     public Image image;
 
-        public void InitialiseItem(Item newItem) {
+    [HideInInspector] public int count = 1; //each item starts with 1 quantity
+
+    private void Start() {
+        InitialiseItem(item);
+    }
+
+    public void InitialiseItem(Item newItem) {
         item = newItem;
         image.sprite = newItem.image;
     }

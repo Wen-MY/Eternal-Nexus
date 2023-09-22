@@ -270,7 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wireEnd: {fileID: 354867475}
   lightOn: {fileID: 354867476}
-  number: 1
+  text: {fileID: 413382985}
 --- !u!1 &248673848
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wireEnd: {fileID: 4425930194677309590}
   lightOn: {fileID: 4425930194677309591}
-  number: 1
+  text: {fileID: 413382985}
 --- !u!1001 &354867474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -797,7 +797,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The broken circuit had been fixed
+  m_Text: 'The broken circuit had been fixed!
+
+    Proceed to next level...'
 --- !u!222 &413382986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1303,7 +1305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wireEnd: {fileID: 1314985229}
   lightOn: {fileID: 1314985230}
-  number: 1
+  text: {fileID: 413382985}
 --- !u!1001 &711765256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1430,7 +1432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wireEnd: {fileID: 1579846108}
   lightOn: {fileID: 1579846109}
-  number: 1
+  text: {fileID: 413382985}
 --- !u!4 &896090587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3726920600549940399, guid: 1c572f6d47e1ebd4f8868aafe34b7b7a, type: 3}
@@ -1535,7 +1537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wireEnd: {fileID: 711765257}
   lightOn: {fileID: 711765258}
-  number: 1
+  text: {fileID: 413382985}
 --- !u!1001 &1314985228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1658,7 +1660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wireEnd: {fileID: 443919636}
   lightOn: {fileID: 443919637}
-  number: 1
+  text: {fileID: 413382985}
 --- !u!1001 &1579846107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1776,7 +1778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wireEnd: {fileID: 272963412}
   lightOn: {fileID: 272963413}
-  number: 1
+  text: {fileID: 413382985}
 --- !u!4 &1693442912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3726920600549940399, guid: 1c572f6d47e1ebd4f8868aafe34b7b7a, type: 3}
@@ -1801,7 +1803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wireEnd: {fileID: 1963839989}
   lightOn: {fileID: 1963839990}
-  number: 1
+  text: {fileID: 413382985}
 --- !u!1001 &1963839988
 PrefabInstance:
   m_ObjectHideFlags: 0

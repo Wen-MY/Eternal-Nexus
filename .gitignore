@@ -76,3 +76,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]cenes/SampleScene.unity
 /[Aa]ssets/[Ss]cenes/SampleScene.meta
 /[Aa]ssets/[Ss]cenes/SampleScene/*
+*.cs
