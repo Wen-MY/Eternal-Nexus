@@ -482,7 +482,7 @@ MonoBehaviour:
   flyScript: {fileID: 3354502549194588351}
   teleportScript: {fileID: 7289421472684243223}
   dashScript: {fileID: 1414979499620360026}
-  shieldUI: {fileID: 0}
+  shieldUI: {fileID: 7366408155217575663, guid: 9a8fb115d50270848840870f9dc3281a, type: 3}
 --- !u!114 &3354502549194588351
 MonoBehaviour:
   m_ObjectHideFlags: 0
