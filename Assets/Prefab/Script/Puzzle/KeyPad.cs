@@ -14,7 +14,7 @@ public class KeyPad : MonoBehaviour
     public GameObject playerMechanism;
     public GameObject crosshair;
     public GameObject ammoManager;
-    public GameObject passwordPanel;
+    public Canvas passwordCanvas;
     //public GameObject shield;
     public WeaponSwitcher weaponSwitcher;
     public InventoryManager inventoryManager;
@@ -28,10 +28,12 @@ public class KeyPad : MonoBehaviour
     private void Start()
     {
         Debug.Log("Keypad script started.");
+        passwordCanvas.gameObject.SetActive(false);
         inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
         weaponSwitcher = GameObject.Find("Gun Holder").GetComponent<WeaponSwitcher>();
         messageText = GameObject.Find("Instruction/MessageText").GetComponent<TextMeshProUGUI>();
-        messageText.enabled = false;
+        
+        HideMessage();
         CloseKeyPad();
         // Call CheckPlayerInRange to initialize the message state
         CheckPlayerInRange();
@@ -40,19 +42,34 @@ public class KeyPad : MonoBehaviour
     private void Update()
     {
         Debug.Log("Update() is called.");
-        CheckPlayerInRange();
+
         firingSystem = GameObject.Find("Mechanism").GetComponent<FiringSystem>();
-        if (Input.GetKeyDown(KeyCode.O) && isPlayerInRange)
+        
+        CheckPlayerInRange();
+        
+        if (Input.GetKeyDown(KeyCode.O))
         {
-            ToggleKeyPad();
+            if (isPlayerInRange)
+            {
+                ToggleKeyPad();
+            }
         }
+        
         if (pauseMenu.activeInHierarchy)
         {
             CloseKeyPad();
         }
-        if (passwordPanel.activeInHierarchy && !codeEntered)
+
+        if (passwordCanvas.isActiveAndEnabled && !codeEntered)
         {
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            GetKeyboardInput();
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
@@ -82,6 +99,7 @@ public class KeyPad : MonoBehaviour
     private void CheckPlayerInRange()
     {
         Debug.Log("CheckPlayerInRange() is called.");
+
         float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
 
         if (distanceToPlayer <= activationRange)
@@ -91,58 +109,49 @@ public class KeyPad : MonoBehaviour
                 isPlayerInRange = true;
                 ShowMessage("Press 'O' to open.");
             }
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                if (isMessageShown)
-                {
-                    HideMessage();
-                    ToggleKeyPad();
-                }
-                else if (!codeEntered)
-                {
-                    ToggleKeyPad();
-                }
-            }
         }
         else
         {
-            if (isPlayerInRange)
-            {
-                isPlayerInRange = false;
-                HideMessage();
-            }
+            isPlayerInRange = false;
+            HideMessage();
         }
     }
 
     public void ToggleKeyPad()
     {
         Debug.Log("ToggleKeyPad() is called.");
+        HideMessage();
+        passwordCanvas.gameObject.SetActive(true);
+        GetKeyboardInput();
+
         weaponSwitcher.enabled = false;
         inventoryManager.enabled = false;
         firingSystem.enabled = false;
-
-        passwordPanel.SetActive(true);
+       
         //shield.SetActive(false);
         playerMechanism.SetActive(false);
         crosshair.SetActive(false);
         playerMechanism.SetActive(false);
         ammoManager.SetActive(false);
+
         Time.timeScale = 0;
     }
 
     public void CloseKeyPad()
     {
         Debug.Log("CloseKeyPad() is called.");
+        passwordCanvas.gameObject.SetActive(false);
+
         weaponSwitcher.enabled = true;
         inventoryManager.enabled = true;
         firingSystem.enabled = true;
 
-        passwordPanel.SetActive(false);
         //shield.SetActive(true);
         playerMechanism.SetActive(true);
         crosshair.SetActive(true);
         playerMechanism.SetActive(true);
         ammoManager.SetActive(true);
+
         Time.timeScale = 1;
     }
 
@@ -166,7 +175,6 @@ public class KeyPad : MonoBehaviour
 
     public void Number(int number)
     {
-        Debug.Log("Number(" + number + ") is called.");
         if (enteredCode.Length < Answer.Length)
         {
             enteredCode += number.ToString();
@@ -220,6 +228,7 @@ public class KeyPad : MonoBehaviour
         Ans.color = Color.red;
         Ans.text = "Invalid";
         StartCoroutine(ClearMessage(2f)); // Hide the invalid message after 2 seconds
+        StartCoroutine(CloseKeyPadWithDelay(1f));
     }
 
     private IEnumerator ClearMessage(float delay)

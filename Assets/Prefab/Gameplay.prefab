@@ -139,10 +139,10 @@ RectTransform:
   - {fileID: 6104861952209496566}
   - {fileID: 1602901360030208081}
   - {fileID: 117430895257187674}
-  - {fileID: 5760923158401868926}
   - {fileID: 7965345318166573158}
   - {fileID: 1364576261358052460}
   - {fileID: 2079216683173798165}
+  - {fileID: 5760923158401868926}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1593,10 +1593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fff1e295b3f2a44b3a088bde799606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countText: {fileID: 0}
   item: {fileID: 0}
-  count: 1
   image: {fileID: 0}
+  count: 1
 --- !u!224 &8027979648671004575 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5388174418485391846, guid: 82286e08e9463764583d29b8a05076b2, type: 3}
@@ -1731,10 +1730,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fff1e295b3f2a44b3a088bde799606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countText: {fileID: 0}
   item: {fileID: 0}
-  count: 1
   image: {fileID: 0}
+  count: 1
 --- !u!224 &7802318059020757900 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5388174418485391846, guid: 82286e08e9463764583d29b8a05076b2, type: 3}
@@ -2251,10 +2249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fff1e295b3f2a44b3a088bde799606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countText: {fileID: 0}
   item: {fileID: 0}
-  count: 1
   image: {fileID: 0}
+  count: 1
 --- !u!224 &8924074569688714803 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5388174418485391846, guid: 82286e08e9463764583d29b8a05076b2, type: 3}
@@ -2576,10 +2573,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fff1e295b3f2a44b3a088bde799606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countText: {fileID: 0}
   item: {fileID: 11400000, guid: e027867e9ce19714b9f1e27945808efb, type: 2}
-  count: 1
   image: {fileID: 0}
+  count: 1
 --- !u!224 &8986536097282782913 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5388174418485391846, guid: 82286e08e9463764583d29b8a05076b2, type: 3}
@@ -2719,10 +2715,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fff1e295b3f2a44b3a088bde799606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countText: {fileID: 0}
   item: {fileID: 11400000, guid: b020f7cd13fd5324282299990b372e82, type: 2}
-  count: 1
   image: {fileID: 0}
+  count: 1
 --- !u!1001 &5441437354483343971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3239,10 +3234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fff1e295b3f2a44b3a088bde799606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countText: {fileID: 0}
   item: {fileID: 0}
-  count: 1
   image: {fileID: 0}
+  count: 1
 --- !u!1001 &6119944612384689207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3755,10 +3749,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fff1e295b3f2a44b3a088bde799606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countText: {fileID: 0}
   item: {fileID: 0}
-  count: 1
   image: {fileID: 0}
+  count: 1
 --- !u!1001 &6275563865934616008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4270,10 +4263,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fff1e295b3f2a44b3a088bde799606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countText: {fileID: 0}
   item: {fileID: 0}
-  count: 1
   image: {fileID: 0}
+  count: 1
 --- !u!224 &3093418262843561471 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5388174418485391846, guid: 82286e08e9463764583d29b8a05076b2, type: 3}
@@ -4408,10 +4400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fff1e295b3f2a44b3a088bde799606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countText: {fileID: 0}
   item: {fileID: 0}
-  count: 1
   image: {fileID: 0}
+  count: 1
 --- !u!224 &2610982736209839120 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5388174418485391846, guid: 82286e08e9463764583d29b8a05076b2, type: 3}
@@ -4546,10 +4537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fff1e295b3f2a44b3a088bde799606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countText: {fileID: 0}
   item: {fileID: 0}
-  count: 1
   image: {fileID: 0}
+  count: 1
 --- !u!224 &4043568185834525894 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5388174418485391846, guid: 82286e08e9463764583d29b8a05076b2, type: 3}
