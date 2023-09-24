@@ -13053,6 +13053,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puzzle
       objectReference: {fileID: 0}
+    - target: {fileID: 1298166524247545777, guid: 1f9b283613a3f9d439eff14a6d7effe3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7389505551680095575, guid: 1f9b283613a3f9d439eff14a6d7effe3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13314,6 +13318,10 @@ PrefabInstance:
     - target: {fileID: 6310255501024855596, guid: 4d7421ca544fe994e8125992d8dea16a, type: 3}
       propertyPath: m_Name
       value: Instruction
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310255501024855596, guid: 4d7421ca544fe994e8125992d8dea16a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
