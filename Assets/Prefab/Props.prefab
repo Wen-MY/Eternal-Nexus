@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7536444880582601142}
   - component: {fileID: 5428584445780673115}
+  - component: {fileID: 4159901942014289227}
   m_Layer: 0
   m_Name: Props
   m_TagString: Untagged
@@ -54,6 +55,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4159901942014289227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076006164113782124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ccca0b1219b9c4db64cf64a3baf36c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 0}
+  itemsToPickUp:
+  - {fileID: 11400000, guid: bad2972f7e3f8f14da96e82950a2d545, type: 2}
+  - {fileID: 11400000, guid: b020f7cd13fd5324282299990b372e82, type: 2}
+  - {fileID: 11400000, guid: e027867e9ce19714b9f1e27945808efb, type: 2}
+  pickupRadius: 2
 --- !u!1001 &8486167734999194955
 PrefabInstance:
   m_ObjectHideFlags: 0

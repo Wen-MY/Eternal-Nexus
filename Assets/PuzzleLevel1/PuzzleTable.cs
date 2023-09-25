@@ -12,7 +12,8 @@ public class PuzzleTable : MonoBehaviour
 
     private void Start()
     {
-        messageText.enabled = false; 
+        messageText.enabled = false;
+        player = GameObject.Find("Player");
     }
 
     private void Update()

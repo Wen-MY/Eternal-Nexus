@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: a5779048904b60146a369f9192c9a0e8
   - enabled: 1
     path: Assets/Scenes/Level1.unity
-    guid: 66674cc7a1528944c9acf29414bf8c43
+    guid: b4af013fecba370469e7cc5e646d3f85
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 27f2fe81302afc74abd46cb08d787c9d
@@ -23,8 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PuzzleScene.unity
     guid: 69dfdcfa3ead52542bfc4eb912ceb2ef
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level1.unity
     guid: b4af013fecba370469e7cc5e646d3f85
   m_configObjects:
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 32c16e2b4ff32f549971d35de1bc7954, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 51c32281a8d1b2c4d8e52c5aacd2f7a3, type: 2}
